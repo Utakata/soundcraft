@@ -1,6 +1,6 @@
 # Where SoundCraft falls short of Pro Tools
 
-> **Last reviewed:** 2026-10-19 · **Last updated:** 2026-10-25 · **Change:** trivial (G-04: Clip Looping crossfade and loop count; previously trivial: G-08 and G-20: built-in plugin count, the sampler shipped) · **Target:** Avid Pro Tools Ultimate 2026.4.1
+> **Last reviewed:** 2026-10-19 · **Last updated:** 2026-10-29 · **Change:** trivial (G-09: Japanese display language; previously trivial: G-04: Clip Looping crossfade and loop count; previously trivial: G-08 and G-20: built-in plugin count, the sampler shipped) · **Target:** Avid Pro Tools Ultimate 2026.4.1
 
 Every known shortfall, one entry each, ranked by how much it stops a Pro Tools user from doing
 real work in SoundCraft. This is the work list: pick from the top. Rows marked **alpha blocker**
@@ -23,7 +23,7 @@ When you close a gap, delete its entry (or shrink it) in the same PR, and bump t
 | G-06 | (Record-to-disk part: alpha blocker for the tracking row) Sources decoded whole into RAM; recording into RAM | Performance | [hardware-parity.md](hardware-parity.md) | 15–25 |
 | G-07 | Nothing is compared against Pro Tools' output (no fidelity harness) | Features | this file | 20–30 |
 | G-08 | Built-in plugin catalogue thin and unverified | Features | [plugin-parity.md](plugin-parity.md) | 80–120 |
-| G-09 | English only, no string catalog, no CJK/RTL rendering | Localization | [localization-parity.md](localization-parity.md) | 70–110 |
+| G-09 | English and Japanese only (Japanese unreviewed), no RTL or complex-script rendering | Localization | [localization-parity.md](localization-parity.md) | 55–90 |
 | G-10 | No control surfaces (HUI/MCU, EUCON) | Hardware | [hardware-parity.md](hardware-parity.md) | 40–70 |
 | G-11 | No external sync (MTC, LTC, MIDI clock, video reference) | Hardware | [hardware-parity.md](hardware-parity.md) | 15–25 |
 | G-12 | Immersive delivery: no Dolby Atmos/ADM BWF, MPEG-H, binaural | Features | [file-format-parity.md](file-format-parity.md) | 50–80 |
@@ -147,9 +147,11 @@ parametric request #139. ≈ 80–120 h.
 
 ### G-09. Localization
 
-See [`localization-parity.md`](localization-parity.md): no catalog, every string literal in code;
-egui has no complex-script shaping or RTL; no CJK font fallback (PR #141 open). ≈ 70–110 h plus
-native-speaker review.
+See [`localization-parity.md`](localization-parity.md): English and Japanese, translated at draw
+time from per-language tables (`crates/ui-egui/i18n`); Japanese still needs native-speaker review,
+and command descriptions, some tooltips and plugin parameter names are not routed through the
+lookup yet. egui has no complex-script shaping or RTL; no Devanagari/Arabic font (PR #141 open).
+≈ 55–90 h plus native-speaker review.
 
 ### G-10. Control surfaces
 
@@ -225,6 +227,7 @@ missing. Out of scope unless the owner decides otherwise.
 
 | Date | Change | Summary |
 |---|---|---|
+| 2026-10-29 | trivial | G-09: Japanese display language shipped (partial, unreviewed); 70–110 h → 55–90 h |
 | 2026-10-25 | trivial | G-04: Clip Looping (#1030) lacks the loop crossfade option, and Number of Loops stops at 512 while length and fill make up to 1000 loops |
 | 2026-10-24 | trivial | G-08: 27 processors + 3 instruments, as the plugin registry holds; G-20: the sampler shipped (#108), so it is no longer listed as missing |
 | 2026-10-19 | trivial | G-04: Float32 encoding retains finite headroom (#791); integer clipping and non-finite handling retained |

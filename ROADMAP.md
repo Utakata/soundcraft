@@ -2,7 +2,7 @@
 
 **Stage: pre-alpha** · next: alpha, ~5% and ~110–180 h away (the alpha gate's three failing workflows)
 
-> **Last reviewed:** 2026-10-24 · **Last updated:** 2026-10-25 · **Change:** trivial (side panels in dock columns, Auto Pan stereo balance, Clip List Auto Rename, Strip Silence rectangles, Strip Silence Rename, Strip Silence Extract and Separate, Clip Looping dialog, AudioSuite Vari-Fi speed ramps, Auto Pan plugin, Subharmonic plugin, Ring Modulator plugin, Float32 file headroom) · **Target:** Avid Pro Tools Ultimate 2026.4.1
+> **Last reviewed:** 2026-10-24 · **Last updated:** 2026-10-29 · **Change:** minor (Japanese display language; previously trivial: side panels in dock columns, Auto Pan stereo balance, Clip List Auto Rename, Strip Silence rectangles, Strip Silence Rename, Strip Silence Extract and Separate, Clip Looping dialog, AudioSuite Vari-Fi speed ramps, Auto Pan plugin, Subharmonic plugin, Ring Modulator plugin, Float32 file headroom) · **Target:** Avid Pro Tools Ultimate 2026.4.1
 
 SoundCraft is a clean-room, pure-Rust digital audio workstation that aims at full parity with
 Avid Pro Tools, and then beyond it: faster, open, scriptable and agent-controllable. This page is
@@ -50,7 +50,7 @@ measures readiness and adds hardware, localization and field bug reports.
 | UI/UX fidelity | ~55 % | 60–100 | [ui-parity.md](docs/ui-parity.md) |
 | File formats | ~40 % | 70–120 | [file-format-parity.md](docs/file-format-parity.md) |
 | Hardware (interfaces, MIDI, surfaces, sync) | ~12 % | 110–180 | [hardware-parity.md](docs/hardware-parity.md) |
-| Localization | ~12 % (1 of Pro Tools' 8 languages) | 70–110 | [localization-parity.md](docs/localization-parity.md) |
+| Localization | ~23 % (2 of Pro Tools' 8 languages, Japanese unreviewed) | 55–90 | [localization-parity.md](docs/localization-parity.md) |
 | Performance | ~35 % (unmeasured) | 40–70 | [hardware-parity.md](docs/hardware-parity.md#performance) |
 | Stability | ~45 % | 50–80 | [gaps.md](docs/gaps.md) |
 | Platforms | ~65 % (5 platforms built, macOS exercised) | 20–40 | [gaps.md](docs/gaps.md) |
@@ -91,12 +91,12 @@ Weights and evidence per row: [target-app-parity.md](docs/target-app-parity.md#f
 | French | fr | none (PR #143 open) | 0 % |
 | Portuguese | pt | none | 0 % |
 | Indonesian | id | none | 0 % |
-| Japanese | ja | none | 0 % |
+| Japanese | ja | partial (no native review) | ~90 % |
 | German | de | none | 0 % |
 | Korean | ko | none | 0 % |
 | Vietnamese | vi | none | 0 % |
 
-Other languages shipped: 0. Detail: [localization-parity.md](docs/localization-parity.md).
+Other languages shipped: 1 (Japanese, partial). Detail: [localization-parity.md](docs/localization-parity.md).
 
 ## Upcoming
 
@@ -176,6 +176,7 @@ mutated and truncated movies. Field reports from the first public week are track
 
 | Date | Change | Summary |
 |---|---|---|
+| 2026-10-29 | minor | Japanese display language (partial, unreviewed): Localization ~12 % → ~23 %, 55–90 h left |
 | 2026-10-25 | trivial | Progress log: side panels in dock columns; readiness estimates unchanged |
 | 2026-10-25 | trivial | Progress log: Auto Pan stereo balance; readiness estimates unchanged |
 | 2026-10-24 | trivial | Progress log: Clip List Auto Rename; readiness estimates unchanged |
