@@ -1,0 +1,152 @@
+# Japanese menu labels: View, Window. Format: English<TAB>日本語
+Mix Window Views	ミックスウィンドウの表示項目
+Mic Preamps	マイクプリアンプ
+Instruments	インストゥルメント
+HEAT	HEAT
+Inserts A-E	インサート A-E
+Inserts F-J	インサート F-J
+Sends A-E	センド A-E
+Sends F-J	センド F-J
+EQ Curve	EQ カーブ
+I/O	I/O
+Object	オブジェクト
+Meters and Faders	メーターとフェーダー
+Delay Compensation	遅延補正
+Track Color	トラックカラー
+Comments	コメント
+All	すべて
+Minimal	最小限
+Narrow Mix	幅を狭めたミックス
+Edit Window Views	編集ウィンドウの表示項目
+Real-Time Properties	リアルタイムプロパティ
+Marker Controls	マーカーコントロール
+Pinned Tracks	ピン留めトラック
+Rulers	ルーラー
+Bars|Beats	小節|拍
+Min:Secs	分:秒
+Timecode	タイムコード
+Timecode 2	Timecode 2
+Feet+Frames	フィート+フレーム
+Samples	サンプル
+Tempo	テンポ
+Tempo Editor	テンポエディター
+Meter	拍子
+Key Signature	調号
+Key Signature Staff	調号譜表
+Chord Symbols	コード記号
+Markers	マーカー
+Markers 2	マーカー 2
+Markers 3	マーカー 3
+Markers 4	マーカー 4
+Markers 5	マーカー 5
+All Marker Rulers	すべてのマーカールーラー
+Marker Displays	マーカー表示
+Track Lane	トラックレーン
+Ruler Lines	ルーラー線
+Folder Lines	フォルダー線
+Ruler Lane Color	ルーラーレーンカラー
+Track Lane Color	トラックレーンカラー
+Other Displays	その他の表示
+Universe	全体表示
+Track List	トラックリスト
+Clip List	クリップリスト
+MIDI Input Display	MIDI 入力表示
+Lower Dock	下部パネル
+MIDI Editor	MIDI エディター
+Sync Point	同期ポイント
+Processing State	処理状態
+Name	名前
+Channel Name	チャンネル名
+Scene And Take	シーンとテイク
+Overlap Shadows	重なりの影
+Transparency	透明度
+Overwrite Indicator	上書き表示
+Copy/Move Indicators	コピー/移動表示
+Clip Gain Line	クリップゲイン線
+Clip Gain Info	クリップゲイン情報
+Clip Effects Status	クリップエフェクト状態
+ARA Note Overlay	ARA ノートオーバーレイ
+Current Time	現在の時間
+Original Time Stamp	元のタイムスタンプ
+User Time Stamp	ユーザータイムスタンプ
+No Time	時間なし
+Display on All Channels	すべてのチャンネルに表示
+Waveforms	波形
+Peak	ピーク
+Power	パワー
+Rectified	整流
+Outlines	輪郭
+Overlapped Crossfades	重なったクロスフェード
+Trim Playlist	トリムプレイリスト
+Composite Playlist	合成プレイリスト
+Expanded Sends	センドの展開
+None	なし
+Send A	センド A
+Send B	センド B
+Send C	センド C
+Send D	センド D
+Send E	センド E
+Send F	センド F
+Send G	センド G
+Send H	センド H
+Send I	センド I
+Send J	センド J
+Track Number	トラック番号
+Track Transcription Lane	トラック文字起こしレーン
+Dropped Video Frame Indicator	ビデオのコマ落ち表示
+Transport	トランスポート
+Counters	カウンター
+MIDI Controls	MIDI コントロール
+Synchronization	同期
+Ableton Link	Ableton Link
+Output Meters	出力メーター
+Expanded	展開
+Main Counter	メインカウンター
+Configurations	構成
+Window Configuration List	ウィンドウ構成リスト
+New Configuration...	新規構成...
+Update Active Configuration	アクティブな構成を更新
+Auto-Update Active Configuration	アクティブな構成を自動更新
+Arrange	整列
+Tile	並べて表示
+Tile Horizontal	水平に並べて表示
+Tile Vertical	垂直に並べて表示
+Cascade	重ねて表示
+Hide All Floating Windows	すべてのフローティングウィンドウを隠す
+Close Window	ウィンドウを閉じる
+Mix	ミックス
+Sketch to Front	スケッチを最前面へ移動
+Score Editor	スコアエディター
+MIDI Event List	MIDI イベントリスト
+MIDI Editors	MIDI エディター
+MIDI Keyboard	MIDI キーボード
+Splice	Splice
+Learn	学習
+SoundFlow	SoundFlow
+Task Manager	タスクマネージャー
+New Workspace	新規ワークスペース
+Default	デフォルト
+Soundbase	Soundbase
+Track Presets	トラックプリセット
+Workspaces	ワークスペース
+Close All Workspaces	すべてのワークスペースを閉じる
+Big Counter	大型カウンター
+Memory Locations	メモリーロケーション
+Machine Track Arming	マシントラック録音待機
+Video Universe	ビデオ全体表示
+Video	ビデオ
+Color Palette	カラーパレット
+UI Customization	UI カスタマイズ
+Metadata Inspector	メタデータインスペクター
+Undo History	取り消し履歴
+Transcript	文字起こし
+Pro Tools Search	Pro Tools 検索
+Renderer	レンダラー
+Trim and Downmix	トリムとダウンミックス
+Collaboration	コラボレーション
+Pro Tools Projects	Pro Tools プロジェクト
+Find Talent	クリエイターを探す
+Messages	メッセージ
+Disk Usage	ディスク使用状況
+System Usage	システム使用状況
+Reset Panel Layout	パネルレイアウトをリセット

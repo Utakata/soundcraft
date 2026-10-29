@@ -146,6 +146,7 @@ impl SoundApp {
                 ctx.request_repaint();
             }
         }
+        crate::i18n::set(self.ui.language);
         let light = theme::wants_light(ctx, self.ui.theme);
         if self.theme_applied != Some(light) || theme::is_light() != light {
             theme::apply(ctx, light);

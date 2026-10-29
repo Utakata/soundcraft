@@ -4,6 +4,10 @@
 use egui::{FontData, FontDefinitions, FontFamily};
 use std::sync::Arc;
 
+/// Noto Sans JP (subset OTF, SIL OFL 1.1; see ATTRIBUTION.md), bundled so Japanese draws the same on every
+/// platform, the web build included. It goes in every family right after the primary font.
+const NOTO_SANS_JP: &[u8] = include_bytes!("../../../assets/fonts/NotoSansJP-Regular.otf");
+
 /// (path, ttc index) candidates for regular and bold UI text, by platform.
 const REGULAR: &[(&str, u32)] = &[
     ("/System/Library/Fonts/HelveticaNeue.ttc", 0),
@@ -126,6 +130,10 @@ pub fn definitions(system_fonts: bool) -> FontDefinitions {
         bold_family.insert(0, "system-regular".into());
     }
     fonts.families.insert(FontFamily::Name("bold".into()), bold_family);
+    fonts.font_data.insert("noto-sans-jp".into(), Arc::new(FontData::from_static(NOTO_SANS_JP)));
+    for family in fonts.families.values_mut() {
+        family.insert(1.min(family.len()), "noto-sans-jp".into());
+    }
     if let Some(h) = load(HANGUL, "sans-serif:lang=ko", Some("ko"), system_fonts) {
         fonts.font_data.insert("system-hangul".into(), Arc::new(h));
         for family in fonts.families.values_mut() {

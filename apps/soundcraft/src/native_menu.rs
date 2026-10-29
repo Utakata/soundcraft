@@ -2,6 +2,7 @@
 use muda::{CheckMenuItem, Menu, MenuEvent, MenuItem, PredefinedMenuItem, Submenu};
 use objc2::MainThreadMarker;
 use objc2_app_kit::NSApplication;
+use soundcraft_ui_egui::i18n::{self, Language};
 use soundcraft_ui_egui::{SoundApp, menus};
 use std::sync::mpsc::{Receiver, channel};
 
@@ -9,6 +10,8 @@ struct Entry {
     item: CheckMenuItem,
     command: Option<String>,
     path: String,
+    /// The English label; the item shows its translation in the current language.
+    label: String,
     enabled: bool,
     checked: bool,
 }
@@ -16,6 +19,12 @@ struct Entry {
 pub struct NativeMenu {
     menu: Menu,
     entries: Vec<Entry>,
+    /// Submenu titles, with their English text, so a language change retranslates them.
+    titles: Vec<(Submenu, String)>,
+    /// The application menu's plain items, with their English text.
+    fixed: Vec<(MenuItem, &'static str)>,
+    /// The language the menu text was last set in.
+    language: Language,
     events: Receiver<MenuEvent>,
     /// When `sync` last walked the entries; see `SYNC_EVERY`.
     last_sync: Option<std::time::Instant>,
@@ -30,7 +39,8 @@ impl NativeMenu {
     pub fn new(app: &SoundApp, ctx: &egui::Context) -> muda::Result<Self> {
         let menu = Menu::new();
         let (tx, events) = channel();
-        let mut native = Self { menu, entries: Vec::new(), events, last_sync: None };
+        let mut native =
+            Self { menu, entries: Vec::new(), titles: Vec::new(), fixed: Vec::new(), language: i18n::current(), events, last_sync: None };
         let app_menu = Submenu::new("SoundCraft", true);
         native.add_item(app, &app_menu, "About SoundCraft", "", Some("window.about".into()))?;
         native.add_item(app, &app_menu, "Session Info", "", Some("window.session_info".into()))?;
@@ -39,8 +49,8 @@ impl NativeMenu {
         app_menu.append(&PredefinedMenuItem::services(None))?;
         app_menu.append(&PredefinedMenuItem::separator())?;
         // muda's own Hide items take ⌘H and ⌥⌘H, which are Heal Separation and Copy to Send.
-        app_menu.append(&MenuItem::with_id("hide", "Hide SoundCraft", true, None))?;
-        app_menu.append(&MenuItem::with_id("hide_others", "Hide Others", true, None))?;
+        native.add_fixed(&app_menu, "hide", "Hide SoundCraft")?;
+        native.add_fixed(&app_menu, "hide_others", "Hide Others")?;
         app_menu.append(&PredefinedMenuItem::show_all(None))?;
         app_menu.append(&PredefinedMenuItem::separator())?;
         native.add_item(app, &app_menu, "Quit SoundCraft", "", Some("app.quit".into()))?;
@@ -61,7 +71,8 @@ impl NativeMenu {
     }
 
     fn add_branch(&mut self, app: &SoundApp, node: &menus::MenuNode, aliases: &[(&str, &str)]) -> muda::Result<Submenu> {
-        let submenu = Submenu::new(&node.label, true);
+        let submenu = Submenu::new(i18n::tr(&node.label), true);
+        self.titles.push((submenu.clone(), node.label.clone()));
         for child in &node.children {
             if child.children.is_empty() {
                 self.add_item(app, &submenu, &child.label, &child.path, menus::command_for_path(&child.path, aliases))?;
@@ -75,9 +86,16 @@ impl NativeMenu {
     fn add_item(&mut self, app: &SoundApp, parent: &Submenu, label: &str, path: &str, command: Option<String>) -> muda::Result<()> {
         let (enabled, checked) = menus::item_state(app, path, command.as_deref());
         // egui owns keyboard shortcuts, so a key press is dispatched only once.
-        let item = CheckMenuItem::new(label, enabled, checked, None);
+        let item = CheckMenuItem::new(i18n::tr(label), enabled, checked, None);
         parent.append(&item)?;
-        self.entries.push(Entry { item, command, path: path.into(), enabled, checked });
+        self.entries.push(Entry { item, command, path: path.into(), label: label.into(), enabled, checked });
+        Ok(())
+    }
+
+    fn add_fixed(&mut self, parent: &Submenu, id: &str, label: &'static str) -> muda::Result<()> {
+        let item = MenuItem::with_id(id, i18n::tr(label), true, None);
+        parent.append(&item)?;
+        self.fixed.push((item, label));
         Ok(())
     }
 
@@ -111,11 +129,20 @@ impl NativeMenu {
             return;
         }
         self.last_sync = Some(now);
+        let language = i18n::current();
+        if language != self.language {
+            self.language = language;
+            for (submenu, label) in &self.titles {
+                submenu.set_text(i18n::translate(language, label));
+            }
+            for (item, label) in &self.fixed {
+                item.set_text(i18n::translate(language, label));
+            }
+        }
         for entry in &mut self.entries {
             let (enabled, checked) = menus::item_state(app, &entry.path, entry.command.as_deref());
-            if let Some(label) = menus::live_label(app, entry.command.as_deref())
-                && entry.item.text() != label
-            {
+            let label = menus::live_label(app, entry.command.as_deref()).unwrap_or_else(|| i18n::translate(language, &entry.label).to_owned());
+            if entry.item.text() != label {
                 entry.item.set_text(label);
             }
             if enabled != entry.enabled {

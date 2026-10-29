@@ -36,10 +36,25 @@ impl SoundApp {
                 Ok(v)
             }
             Err(e) => {
-                self.ui.status = e.to_string();
+                self.ui.status = error_text(&e);
                 log::warn!("{id}: {e}");
                 Err(e.to_string())
             }
         }
+    }
+}
+
+/// An engine error in the display language: the error's fixed wording is translated, and so are the
+/// stock reasons commands give and the messages that match a template; names and numbers pass through.
+fn error_text(e: &soundcraft_engine::EngineError) -> String {
+    use crate::i18n;
+    use soundcraft_engine::EngineError as E;
+    match e {
+        E::UnknownCommand(id) => i18n::trf("unknown command `{}`", &[id]),
+        E::Disabled(id, why) => i18n::trf("`{}` is not available: {}", &[id, &i18n::tr_message(why)]),
+        E::BadParams(id, why) => i18n::trf("bad parameters for `{}`: {}", &[id, &i18n::tr_message(why)]),
+        E::NotFound(m) | E::Io(m) => i18n::tr_message(m).into_owned(),
+        E::Unsupported(m) => i18n::trf("unsupported: {}", &[&i18n::tr_message(m)]),
+        E::Internal(id, m) => i18n::trf("internal error in `{}`: {}", &[id, m]),
     }
 }

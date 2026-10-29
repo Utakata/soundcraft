@@ -1,6 +1,7 @@
 //! The Edit window: toolbar, rulers, track headers and playlists.
 
 use crate::dialogs::Dialog;
+use crate::i18n;
 use crate::spot::Spot;
 use crate::theme::{Tokens, bold, clip_colors, regular, rgb};
 use crate::widgets::{groove, level_pos, meter_pos, raised_key, shade};
@@ -75,7 +76,7 @@ fn dock_tabs(app: &mut SoundApp, ui: &mut Ui) {
         ("MEMORY LOCATIONS", app.ui.show_memory_locations, "window.memory_locations"),
         ("UNDO HISTORY", app.ui.show_undo_history, "window.undo_history"),
     ] {
-        let g = ui.painter().layout_no_wrap(label.to_string(), bold(10.5), if on { Color32::WHITE } else { t.text_dim });
+        let g = ui.painter().layout_no_wrap(i18n::tr(label).to_string(), bold(10.5), if on { Color32::WHITE } else { t.text_dim });
         let tr = Rect::from_min_size(pos2(x, r.min.y + 2.0), vec2(g.size().x + 16.0, r.height() - 4.0));
         if on {
             ui.painter().rect_filled(tr, 3.0, t.accent_dark);
@@ -92,21 +93,24 @@ fn status_bar(app: &mut SoundApp, ui: &mut Ui) {
     let t = Tokens::current();
     let r = ui.max_rect();
     let s = app.engine.session();
-    let mut left = format!(
+    let mut left = i18n::trf(
         "{} · {} Hz · {} · {} tracks · {}",
-        s.name,
-        s.sample_rate.hz(),
-        match s.bit_depth {
-            soundcraft_model::BitDepthSetting::Int16 => "16-bit",
-            soundcraft_model::BitDepthSetting::Int24 => "24-bit",
-            soundcraft_model::BitDepthSetting::Float32 => "32-bit float",
-        },
-        s.tracks.len(),
-        app.ui.status
+        &[
+            &s.name,
+            &s.sample_rate.hz().to_string(),
+            i18n::tr(match s.bit_depth {
+                soundcraft_model::BitDepthSetting::Int16 => "16-bit",
+                soundcraft_model::BitDepthSetting::Int24 => "24-bit",
+                soundcraft_model::BitDepthSetting::Float32 => "32-bit float",
+            }),
+            &s.tracks.len().to_string(),
+            // Status messages are built in English; known ones are shown translated.
+            &i18n::tr_message(&app.ui.status),
+        ],
     );
     soundcraft_model::truncate_chars(&mut left, 4 * soundcraft_model::MAX_NAME_CHARS);
     ui.painter().text(pos2(r.min.x + 10.0, r.center().y), Align2::LEFT_CENTER, left, regular(11.0), t.text_dim);
-    let undo = app.engine.undo_label().map_or(String::new(), |l| format!("Undo {l}"));
+    let undo = app.engine.undo_label().map_or(String::new(), |l| i18n::trf("Undo {}", &[i18n::tr(l)]));
     ui.painter().text(
         pos2(r.max.x - 10.0, r.center().y),
         Align2::RIGHT_CENTER,

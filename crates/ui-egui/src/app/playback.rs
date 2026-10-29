@@ -1,6 +1,7 @@
 use super::audio::feed_meter;
 use super::plugins::failed_plugin_status;
 use super::{Gesture, MainWindow, MeterDisplay, Range, Samples, SoundApp, TrackId, TransportRequest, json};
+use crate::i18n;
 
 /// Whether another automation-write pass is due: the transport moved at least
 /// `step` since `last` in either direction. `last == i64::MIN` marks "never
@@ -92,9 +93,9 @@ impl SoundApp {
         let armed = self.engine.session().tracks.iter().any(|t| t.mixer.record_arm);
         if !armed {
             let why = if self.engine.session().tracks.is_empty() {
-                "Nothing to record on yet: add a track with Track › New…, then click its R button."
+                i18n::tr("Nothing to record on yet: add a track with Track › New…, then click its R button.")
             } else {
-                "No track is record-enabled: click the R button on the track to record."
+                i18n::tr("No track is record-enabled: click the R button on the track to record.")
             };
             self.ui.status = why.into();
             self.record_hint = Some((self.last_frame.unwrap_or_default(), why));

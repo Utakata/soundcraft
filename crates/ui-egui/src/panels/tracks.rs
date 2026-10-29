@@ -2,6 +2,7 @@ use super::{
     Align2, Color32, Rect, Sense, SoundApp, Stroke, Tokens, Ui, bold, gutter_scroll, json, panel_header, pos2, regular, rgb, vec2,
     with_pending_offset,
 };
+use crate::i18n;
 
 /// Drag a Tracks list row to reorder the tracks: a line marks the gap it will land in.
 fn drag_track(app: &mut SoundApp, ui: &Ui, row: Rect, id: u64, dropped: bool) {
@@ -42,7 +43,7 @@ pub fn tracks_and_groups(app: &mut SoundApp, ui: &mut Ui) {
     let header = Rect::from_min_size(ui.cursor().min, vec2(ui.available_width(), 22.0));
     panel_header(ui, "TRACKS");
     let plus = Rect::from_center_size(pos2(header.max.x - 13.0, header.center().y), vec2(18.0, 18.0));
-    let tip = format!("New Tracks… ({})", crate::shortcuts::shortcut_label("Cmd+Shift+N", ui.ctx().os().is_mac()));
+    let tip = i18n::trf("New Tracks… ({})", &[&crate::shortcuts::shortcut_label("Cmd+Shift+N", ui.ctx().os().is_mac())]);
     if crate::widgets::icon_button(&mut ui.new_child(egui::UiBuilder::new().max_rect(plus)), plus.size(), "plus", false, &tip).clicked() {
         let _ = app.dialogs.open_for_command(&app.engine, "track.new");
     }
@@ -92,14 +93,14 @@ pub fn tracks_and_groups(app: &mut SoundApp, ui: &mut Ui) {
     let groups_area = with_pending_offset(egui::ScrollArea::vertical().id_salt("groups_scroll"), ui, "groups_scroll");
     let out = groups_area.auto_shrink([false, false]).scroll_bar_visibility(hidden).show(ui, |ui| {
         let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 17.0), Sense::hover());
-        ui.painter().text(pos2(r.min.x + 30.0, r.center().y), Align2::LEFT_CENTER, "<ALL>", regular(11.5).clone(), t.text);
+        ui.painter().text(pos2(r.min.x + 30.0, r.center().y), Align2::LEFT_CENTER, i18n::tr("<ALL>"), regular(11.5).clone(), t.text);
         let all = ui.interact(r, ui.scope_id().with("group_all"), Sense::click());
         all.widget_info(|| egui::WidgetInfo::labeled(egui::Role::Button, true, "<ALL>"));
         if all.double_clicked() {
             let _ = app.run("edit.select_all", json!({}));
         }
         all.context_menu(|ui| {
-            if ui.button("New Group…").clicked() {
+            if ui.button(i18n::tr("New Group…")).clicked() {
                 let _ = app.dialogs.open_for_command(&app.engine, "track.group");
                 ui.close();
             }
@@ -127,7 +128,7 @@ pub fn tracks_and_groups(app: &mut SoundApp, ui: &mut Ui) {
                 let _ = app.run("edit.select", json!({"tracks": members, "exact": true}));
             }
             resp.context_menu(|ui| {
-                if ui.button("Select Tracks in Group").clicked() {
+                if ui.button(i18n::tr("Select Tracks in Group")).clicked() {
                     let _ = app.run("edit.select", json!({"tracks": members, "exact": true}));
                     ui.close();
                 }
@@ -135,11 +136,11 @@ pub fn tracks_and_groups(app: &mut SoundApp, ui: &mut Ui) {
                     let _ = app.run("track.group_toggle", json!({"group": id}));
                     ui.close();
                 }
-                if ui.button("Modify Group…").clicked() {
+                if ui.button(i18n::tr("Modify Group…")).clicked() {
                     let _ = app.dialogs.open_modify_group(&app.engine, soundcraft_model::GroupId(id));
                     ui.close();
                 }
-                if ui.button("Delete Group").clicked() {
+                if ui.button(i18n::tr("Delete Group")).clicked() {
                     let _ = app.run("track.ungroup", json!({"group": id}));
                     ui.close();
                 }

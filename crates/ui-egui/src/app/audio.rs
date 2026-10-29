@@ -1,4 +1,5 @@
 use super::{MeterDisplay, OutputTrouble, Player, SoundApp, Trouble};
+use crate::i18n;
 
 impl SoundApp {
     /// Whether the meters are live: while playing, and while armed or input-monitored tracks are heard.
@@ -58,7 +59,7 @@ impl SoundApp {
         let name = p.device_name.clone();
         let (cause, then) = match trouble {
             OutputTrouble::Bug => (
-                "the audio engine hit an internal error (see the log)".to_string(),
+                i18n::tr("the audio engine hit an internal error (see the log)").to_string(),
                 "Use Reconnect audio device in Setup › Playback Engine, or restart SoundCraft.",
             ),
             OutputTrouble::Gone => {
@@ -101,7 +102,7 @@ impl SoundApp {
                 self.recorder_failed = true;
                 (what, "Reconnect it, then use Reconnect audio device in Setup › Playback Engine.")
             }
-            Trouble::Disk(what) => (what, "Check the disk, then record again."),
+            Trouble::Disk(what) => (what, i18n::tr("Check the disk, then record again.")),
         };
         self.ui.status = if recording {
             format!("Recording stopped: {what}. The take is kept up to there. {then}")

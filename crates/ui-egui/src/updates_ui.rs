@@ -1,6 +1,7 @@
 //! Software updates, background check at startup, and startup prompt modal.
 
 use crate::SoundApp;
+use crate::i18n;
 
 #[cfg(not(target_arch = "wasm32"))]
 use craft_update::updater::{Action, Status, Updater};
@@ -48,7 +49,7 @@ pub(crate) fn check(app: &mut SoundApp) {
     #[cfg(target_arch = "wasm32")]
     {
         app.updates_rt.manual_window_open = true;
-        app.updates_rt.status_message = Some("Update check is not supported in the web browser.".into());
+        app.updates_rt.status_message = Some(i18n::tr("Update check is not supported in the web browser.").into());
     }
 }
 
@@ -82,15 +83,16 @@ pub(crate) fn show(app: &mut SoundApp, ctx: &egui::Context) {
         (rt.manual_window_open, rt.status_message) = match rt.updater.status() {
             Status::Idle => (false, None),
             Status::Checking => (true, None),
-            Status::UpToDate => (true, Some(format!("SoundCraft {} is currently the newest version available.", env!("CARGO_PKG_VERSION")))),
-            Status::Failed(e) => (true, Some(format!("Could not check for updates:\n{e}"))),
+            Status::UpToDate => (true, Some(i18n::trf("SoundCraft {} is currently the newest version available.", &[env!("CARGO_PKG_VERSION")]))),
+            Status::Failed(e) => (true, Some(format!("{}\n{e}", i18n::tr("Could not check for updates:")))),
         };
     }
 
     if app.updates_rt.manual_window_open {
         let mut open = true;
         let mut close = false;
-        egui::Window::new("Check for Updates")
+        egui::Window::new(i18n::tr("Check for Updates"))
+            .id(egui::Id::unique("Check for Updates"))
             .open(&mut open)
             .resizable(false)
             .collapsible(false)
@@ -99,11 +101,11 @@ pub(crate) fn show(app: &mut SoundApp, ctx: &egui::Context) {
                 if let Some(msg) = &app.updates_rt.status_message {
                     ui.label(msg);
                 } else {
-                    ui.label("Checking for updates…");
+                    ui.label(i18n::tr("Checking for updates…"));
                 }
                 ui.add_space(8.0);
                 ui.with_layout(egui::Layout::right_to_left(egui::Align::Center), |ui| {
-                    if ui.button("Close").clicked() {
+                    if ui.button(i18n::tr("Close")).clicked() {
                         close = true;
                     }
                 });

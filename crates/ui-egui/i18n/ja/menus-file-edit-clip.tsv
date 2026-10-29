@@ -1,0 +1,172 @@
+# Japanese menu labels: top-level menus, File, Edit, Clip. Format: English<TAB>日本語
+File	ファイル
+New...	新規...
+Open	開く
+Session...	セッション...
+Project...	プロジェクト...
+Sketch...	スケッチ...
+Dashboard...	ダッシュボード...
+Close Session	セッションを閉じる
+Save Session	セッションを保存
+Save Session As...	セッションを別名で保存...
+Save Session Copy In...	セッションのコピーを保存...
+Save As Template...	テンプレートとして保存...
+Revert Session to Saved...	セッションを保存した状態に戻す...
+Start Collaboration...	コラボレーションを開始...
+Send To...	送信先...
+Sibelius	Sibelius
+Bounce Mix...	ミックスをバウンス...
+Import	読み込み
+Session Data...	セッションデータ...
+Audio...	オーディオ...
+MIDI...	MIDI...
+Video...	ビデオ...
+Clip Groups...	クリップグループ...
+VENUE Channel Names as Track Names	VENUE チャンネル名をトラック名として読み込み
+Export	書き出し
+Selected Tracks as New AAF/OMF...	選択トラックを新規 AAF/OMF として書き出し...
+Selected Tracks as New Session...	選択トラックを新規セッションとして書き出し...
+Selected Tracks as New Media Composer Compatible Session...	選択トラックを Media Composer 互換の新規セッションとして書き出し...
+Sibelius...	Sibelius...
+Session Info as Text...	セッション情報をテキストとして書き出し...
+Get Info...	情報を表示...
+Score Setup...	スコア設定...
+Print Score...	スコアを印刷...
+Sign In	サインイン
+Edit	編集
+Can't Undo	取り消せません
+Can't Redo	やり直せません
+Restore Last Selection	直前の選択を復元
+Cut	カット
+Copy	コピー
+Paste	ペースト
+Clear	消去
+Cut Special	特殊カット
+Clip Gain	クリップゲイン
+Clip Effects	クリップエフェクト
+All Automation	すべてのオートメーション
+Pan Automation	パンオートメーション
+Plugin Automation	プラグインオートメーション
+Copy Special	特殊コピー
+Audio as MIDI	オーディオを MIDI としてコピー
+Paste Special	特殊ペースト
+Merge MIDI	MIDI をマージ
+Merge Markers	マーカーをマージ
+Repeat to Fill Selection	選択範囲を埋めるまで繰り返し
+To Current Automation Type	現在のオートメーションタイプにペースト
+Clear Special	特殊消去
+Select All	すべてを選択
+Selection	選択
+Change Timeline to Match Edit	タイムライン選択範囲を編集選択範囲に合わせる
+Change Edit to Match Timeline	編集選択範囲をタイムライン選択範囲に合わせる
+Play Edit	編集選択範囲を再生
+Play Timeline	タイムライン選択範囲を再生
+Move Edit Left	編集選択範囲を左へ移動
+Move Edit Right	編集選択範囲を右へ移動
+Halve Edit	編集選択範囲を半分にする
+Double Edit	編集選択範囲を2倍にする
+Duplicate and Extend Edit	編集選択範囲を複製して拡張
+Extend Edit Up	編集選択範囲を上へ拡張
+Extend Edit Down	編集選択範囲を下へ拡張
+Extend Edit Up to Members	編集選択範囲をメンバーまで上へ拡張
+Extend Edit Down to Members	編集選択範囲をメンバーまで下へ拡張
+Remove Edit from Top	編集選択範囲を上端から除外
+Remove Edit from Bottom	編集選択範囲を下端から除外
+Move Edit Selection To Marker Lane Above	編集選択範囲を上のマーカーレーンへ移動
+Move Edit Selection To Marker Lane Below	編集選択範囲を下のマーカーレーンへ移動
+Extend Edit Selection To Marker Lane Above	編集選択範囲を上のマーカーレーンまで拡張
+Extend Edit Selection To Marker Lane Below	編集選択範囲を下のマーカーレーンまで拡張
+Duplicate	複製
+Repeat...	繰り返し...
+Shift...	ずらす...
+Space Clips…	クリップの間隔を設定…
+Insert Silence	無音を挿入
+Snap to	吸着先
+Next	次
+Previous	前
+Trim	トリム
+To Selection	選択範囲へ
+Start to Insertion	開始点を挿入位置へ
+End to Insertion	終了点を挿入位置へ
+Start to Fill Selection	開始点で選択範囲を埋める
+End to Fill Selection	終了点で選択範囲を埋める
+To Fill Selection	選択範囲を埋める
+To File Start	ファイル先頭へ
+To File End	ファイル末尾へ
+To File Boundaries	ファイル境界へ
+Separate	分割
+At Selection	選択範囲で
+On Grid	区切りで
+At Transients	音の立ち上がりで
+Heal Separation	分割を修復
+Consolidate	統合
+Mute	ミュート
+Copy Selection to...	選択範囲のコピー先...
+Target Playlist	対象プレイリスト
+New Playlist	新規プレイリスト
+Duplicate of Main Playlist	メインプレイリストの複製
+Move Selection to...	選択範囲の移動先...
+Strip Silence	無音部分の除去
+TCE Edit to Timeline Selection	タイムライン選択範囲に合わせて TCE 編集
+Automation	オートメーション
+Copy to Send...	センドにコピー...
+Thin	間引き
+Thin All	すべてを間引き
+Convert Volume Automation to Clip Gain	音量オートメーションをクリップゲインに変換
+Convert Clip Gain to Volume Automation	クリップゲインを音量オートメーションに変換
+Coalesce Volume Automation to Clip Gain	音量オートメーションをクリップゲインにまとめる
+Coalesce Clip Gain to Volume Automation	クリップゲインを音量オートメーションにまとめる
+Write to Current	現在のタイプに書き込み
+Write to All Enabled	有効なタイプすべてに書き込み
+Trim to Current	現在のタイプにトリム
+Trim to All Enabled	有効なタイプすべてにトリム
+Glide to Current	現在のタイプへ滑らかに書き込み
+Glide to All Enabled	有効なタイプすべてへ滑らかに書き込み
+Glide Pan Only	パンのみ滑らかに書き込み
+Duplicate Dolby Atmos Plugin Automation to Pan Automation	Dolby Atmos プラグインオートメーションをパンオートメーションに複製
+Duplicate Pan Automation to Dolby Atmos Plugin Automation	パンオートメーションを Dolby Atmos プラグインオートメーションに複製
+Coalesce Pan Guide Automation	パンガイドオートメーションをまとめる
+Fades	フェード
+Create...	作成...
+Delete	削除
+Fade to Start	開始点までフェード
+Fade to End	終了点までフェード
+View	表示
+Track	トラック
+Clip	クリップ
+Edit Lock/Unlock	編集ロック/解除
+Time Lock/Unlock	タイムロック/解除
+Send to Back	最背面へ移動
+Bring to Front	最前面へ移動
+Rating	評価
+none	なし
+1	1
+2	2
+3	3
+4	4
+5	5
+Group	グループ化
+Ungroup	グループ解除
+Ungroup All	すべてグループ解除
+Regroup	再グループ化
+Loop...	ループ...
+Unloop...	ループ解除...
+Capture...	切り出し...
+Rename...	名前を変更...
+Identify Sync Point	同期ポイントを指定
+Quantize to Grid	区切りにクオンタイズ
+Bypass	バイパス
+Render	レンダリング
+ARA Plugins	ARA プラグイン
+Melodyne	Melodyne
+Elastic Properties	Elastic プロパティ
+Conform to Tempo	テンポに合わせる
+Remove Warp	ワープを削除
+Remove Pitch Shift	ピッチシフトを削除
+Event	イベント
+AudioSuite	オフライン処理
+Options	オプション
+Setup	設定
+Window	ウィンドウ
+Remove Sync Point	同期ポイントを削除
+New MIDI Clip	新規 MIDI クリップ

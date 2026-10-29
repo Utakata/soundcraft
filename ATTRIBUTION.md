@@ -21,9 +21,10 @@ are bundled.
 
 ## Fonts
 
-SoundCraft bundles no font files. It uses the default fonts shipped inside the `egui` crate
-(Ubuntu-Light: Ubuntu Font Licence 1.0; Hack: MIT; Noto Emoji: OFL-1.1; emoji-icon-font: MIT)
-and, at runtime, the operating system's own UI fonts when available (never redistributed).
+SoundCraft bundles one font file, Noto Sans JP, for Japanese text (listed under Files below). It also
+uses the default fonts shipped inside the `egui` crate (Ubuntu-Light: Ubuntu Font Licence 1.0; Hack:
+MIT; Noto Emoji: OFL-1.1; emoji-icon-font: MIT) and, at runtime, the operating system's own UI fonts
+when available (never redistributed).
 
 ## Bundled egui font icons
 
@@ -47,6 +48,8 @@ here. The subset uses default_fonts; the parent face uses monochrome_emoji_fonts
 | `docs/brand/artcraft-mark.png` | ArtCraft Team | craftrules `assets/brand/` | ArtCraft brand terms |
 | `docs/brand/artcraft-mark-black.svg` | ArtCraft Team | craftrules `assets/brand/` | ArtCraft brand terms |
 | `docs/brand/artcraft-mark-black.png` | ArtCraft Team | craftrules `assets/brand/` | ArtCraft brand terms |
+| `assets/fonts/NotoSansJP-Regular.otf` | The Noto Project Authors (Google, Adobe) | https://github.com/notofonts/noto-cjk (`Sans/SubsetOTF/JP`) | SIL OFL 1.1 |
+| `assets/fonts/OFL-NotoSansJP.txt` | The Noto Project Authors | https://github.com/notofonts/noto-cjk (`Sans/LICENSE`) | SIL OFL 1.1 (license text) |
 | `assets/app-icon/icon.svg` | SoundCraft contributors | original (hand-placed SVG paths; placeholder app icon) | MIT OR Apache-2.0 |
 | `packaging/macos/dmg/` (all files) | @XusBadia | original (macOS DMG window background and layout, from the app icon; see `packaging/macos/dmg/README.md`) | MIT OR Apache-2.0 |
 | `assets/app-icon/soundcraft-1024.png` | SoundCraft contributors | original, rendered from `icon.svg` | MIT OR Apache-2.0 |

@@ -1,0 +1,193 @@
+# Japanese menu labels: Track, Event, AudioSuite, Options, Setup. Format: English<TAB>日本語
+Group...	グループ...
+Duplicate...	複製...
+Split into Mono	モノラルに分割
+Make Inactive	無効にする
+Move to New Folder...	新規フォルダーに移動...
+Convert Aux to Routing Folder	AUX をルーティングフォルダーに変換
+Change Track Width	トラックのチャンネル構成を変更
+Mono	モノラル
+Stereo	ステレオ
+LCR	LCR
+Quad	クアッド
+LCRS	LCRS
+5.0	5.0
+5.1	5.1
+6.0	6.0
+6.1	6.1
+7.0 SDDS	7.0 SDDS
+7.1 SDDS	7.1 SDDS
+7.0	7.0
+7.1	7.1
+7.0.2	7.0.2
+7.1.2	7.1.2
+1st Order Ambisonics	1次アンビソニックス
+2nd Order Ambisonics	2次アンビソニックス
+3rd Order Ambisonics	3次アンビソニックス
+4th Order Ambisonics	4次アンビソニックス
+5th Order Ambisonics	5次アンビソニックス
+6th Order Ambisonics	6次アンビソニックス
+7th Order Ambisonics	7次アンビソニックス
+5.0.2	5.0.2
+5.1.2	5.1.2
+5.0.4	5.0.4
+5.1.4	5.1.4
+7.0.4	7.0.4
+7.1.4	7.1.4
+7.0.6	7.0.6
+7.1.6	7.1.6
+9.0.4	9.0.4
+9.1.4	9.1.4
+9.0.6	9.0.6
+9.1.6	9.1.6
+Show / Hide...	表示 / 隠す...
+Freeze	フリーズ
+Commit...	確定...
+Bounce...	バウンス...
+Extract MIDI to New Track	MIDI を新規トラックに抽出
+Save Track Preset...	トラックプリセットを保存...
+Bypass Inserts	インサートをバイパス
+EQ	EQ
+Dynamics	ダイナミクス
+Reverb	リバーブ
+Delay	ディレイ
+Modulation	モジュレーション
+Mute Sends	センドをミュート
+Write MIDI Real-Time Properties	MIDI リアルタイムプロパティを書き込む
+Set Record Tracks to Input Only	録音待機トラックを入力のみに設定
+Scroll to Track...	トラックへスクロール...
+Clear All Clip Indicators	すべてのクリッピング表示を消去
+Coalesce VCA Controller Automation	VCA コントローラーオートメーションをまとめる
+Coalesce Trim Automation	トリムオートメーションをまとめる
+Clear Trim Automation	トリムオートメーションを消去
+Designate as Target Playlist	対象プレイリストに指定
+Show Target Playlist	対象プレイリストを表示
+Toggle Recent Playlist	直前のプレイリストに切り替え
+Create Click Track	クリックトラックを作成
+Time Operations	時間操作
+Time Operations Window	時間操作ウィンドウ
+Change Meter...	拍子を変更...
+Insert Time...	時間を挿入...
+Cut Time...	時間をカット...
+Move Song Start...	ソング開始位置を移動...
+Tempo Operations	テンポ操作
+Tempo Operations Window	テンポ操作ウィンドウ
+Constant...	一定...
+Linear...	直線...
+Parabolic...	放物線...
+S-Curve...	S字カーブ...
+Scale...	倍率...
+Stretch...	伸縮...
+MIDI Operations	MIDI 操作
+MIDI Operations Window	MIDI 操作ウィンドウ
+Quantize...	クオンタイズ...
+Change Velocity...	ベロシティを変更...
+Change Duration...	長さを変更...
+Transpose...	移調...
+Select/Split Notes...	ノートを選択/分割...
+Input Quantize...	入力クオンタイズ...
+Step Input...	ステップ入力...
+Restore Performance...	演奏を復元...
+Flatten Performance...	演奏を確定...
+MIDI Track Offsets	MIDI トラックオフセット
+MIDI Real-Time Properties	MIDI リアルタイムプロパティ
+Remove Duplicate Notes	重複ノートを削除
+Add Key Change...	転調を追加...
+Extract Chords from Selection	選択範囲からコードを抽出
+Beat Detective	ビート検出
+Identify Beat...	ビートを指定...
+Renumber Bars...	小節番号を振り直す...
+All MIDI Notes Off	すべての MIDI ノートをオフ
+Retrospective Record	さかのぼり録音
+Channel Strip	チャンネルストリップ
+EQ3 1-Band	EQ3 1-Band
+EQ3 7-Band	EQ3 7-Band
+BF-76	BF-76
+Dyn3 Compressor/Limiter	Dyn3 Compressor/Limiter
+Dyn3 De-Esser	Dyn3 De-Esser
+Dyn3 Expander/Gate	Dyn3 Expander/Gate
+Maxim	Maxim
+Pitch Shift	ピッチシフト
+Pitch II	Pitch II
+Pitch Shift Legacy	ピッチシフト（旧版）
+Time Shift	タイムシフト
+Vari-Fi	Vari-Fi
+D-Verb	D-Verb
+Mod Delay III	Mod Delay III
+Sci-Fi	Sci-Fi
+Harmonic	ハーモニック
+Eleven Lite	Eleven Lite
+Lo-Fi	Lo-Fi
+Recti-Fi	Recti-Fi
+SansAmp PSA-1	SansAmp PSA-1
+Other	その他
+DC Offset Removal	DC オフセット除去
+Gain	ゲイン
+Invert	位相反転
+Normalize	ノーマライズ
+Reverse	逆再生
+Signal Generator	信号発生器
+Time Compression Expansion	時間の圧縮/伸長
+Destructive Record	上書き録音
+Loop Record	ループ録音
+QuickPunch	クイックパンチ
+TrackPunch	トラックパンチ
+DestructivePunch	上書きパンチ
+Prepare DPE Tracks	DPE トラックを準備
+Transport Online	トランスポートをオンライン
+Video Track Online	ビデオトラックをオンライン
+Pre/Post-Roll	プリ/ポストロール
+Loop Playback	ループ再生
+Dynamic Transport	ダイナミックトランスポート
+Edit Window Scrolling	編集ウィンドウのスクロール
+No Scrolling	スクロールなし
+After Playback	再生後
+Page	ページ
+Continuous	連続
+Center Playhead	再生位置を中央に固定
+Link Timeline and Edit Selection	タイムライン選択範囲と編集選択範囲をリンク
+Link Track and Edit Selection	トラック選択と編集選択範囲をリンク
+Insertion Follows Playback	挿入位置が再生に追従
+Tab to Transient	Tab キーで音の立ち上がりへ移動
+Mirrored MIDI Editing	MIDI 連動編集
+Automation Follows Edit	オートメーションが編集に追従
+Markers Follow Edit	マーカーが編集に追従
+Marker Target Follows First Selected Track	マーカーターゲットが最初の選択トラックに追従
+Layered Editing	レイヤー編集
+Click	メトロノーム
+MIDI Thru	MIDI スルー
+Auto-Spot Clips	クリップを自動で位置合わせ
+Pre-Fader Metering	プリフェーダーメーター表示
+Solo Mode	ソロモード
+SIP (Solo In Place)	SIP (ソロインプレース)
+AFL (After Fader Listen)	AFL (アフターフェーダーリッスン)
+PFL (Pre Fader Listen)	PFL (プリフェーダーリッスン)
+Latch	ラッチ
+X-OR (Cancels Previous Solo)	X-OR (前のソロを解除)
+Momentary	押している間のみ
+Edit/Tool Mode Keyboard Lock	編集/ツールモードのキーボードロック
+Calibration Mode	校正モード
+MIDI Live Mode	MIDI ライブモード
+Activate HEAT	HEAT を有効化
+Low Latency Monitoring	低遅延モニタリング
+Hardware...	ハードウェア...
+Playback Engine...	再生エンジン...
+Disk Allocation...	ディスク割り当て...
+Peripherals...	周辺機器...
+I/O...	I/O...
+Machine Track Arming Profiles...	マシントラック録音待機プロファイル...
+Video Sync Offset...	ビデオ同期オフセット...
+Session	セッション
+Current Feet+Frames Position...	現在の Feet+Frames 位置...
+Current Timecode Position...	現在の Timecode 位置...
+External Timecode Offset...	外部 Timecode オフセット...
+Transcription Settings...	文字起こし設定...
+MIDI	MIDI
+MIDI Studio...	MIDI スタジオ...
+MIDI Beat Clock...	MIDI ビートクロック...
+MIDI Input Filter...	MIDI 入力フィルター...
+MIDI Input Devices...	MIDI 入力デバイス...
+Click/Countoff...	メトロノーム/カウントイン...
+Keyboard Shortcuts...	キーボードショートカット...
+Preferences...	環境設定...
+Appearance	外観

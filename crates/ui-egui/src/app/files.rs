@@ -1,4 +1,5 @@
 use super::{SoundApp, midi_editor};
+use crate::i18n;
 
 impl SoundApp {
     /// The open document was replaced outside [`Self::run`] (Recover, a session the browser read
@@ -114,7 +115,7 @@ impl SoundApp {
     /// Replace the open session with unsaved work an earlier run left behind.
     pub fn recover(&mut self, left: &soundcraft_engine::autosave::Leftover) {
         if self.engine.transport.recording {
-            self.ui.status = "Stop recording before recovering other work.".into();
+            self.ui.status = i18n::tr("Stop recording before recovering other work.").into();
             return;
         }
         self.close_autosave();

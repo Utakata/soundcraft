@@ -1,0 +1,538 @@
+# Japanese labels drawn from engine command names, toolbar counters and window controls. Format: English<TAB>日本語
+Add Automation Breakpoint	オートメーションのポイントを追加
+Add MIDI Note	MIDI ノートを追加
+Add Note	ノートを追加
+An open-source digital audio workstation from the ArtCraft team.	ArtCraft チームによるオープンソースのデジタルオーディオワークステーションです。
+Arrange Panel	パネルを配置
+Assign Send	センドを割り当て
+Assign to VCA	VCA に割り当て
+Audio Device	オーディオデバイス
+Audio files	オーディオファイル
+AudioSuite Process	オフライン処理を実行
+Automation Mode	オートメーションモード
+Bit depth	ビット深度
+Bounce Mix…	ミックスをバウンス…
+Bounce Stems...	ステムをバウンス...
+Bypass Insert	インサートをバイパス
+Clear All Mutes	すべてのミュートを解除
+Clear All Solos	すべてのソロを解除
+Clear Automation	オートメーションを消去
+Clear Clips	クリップを消去
+Clear Sampler Sample	サンプラーのサンプルを消去
+Clip Color	クリップカラー
+Clips	クリップ
+Columns beside the track headers: inserts, sends, I/O…	トラックヘッダー横の列: インサート、センド、I/O…
+Decrease Track Height	トラックの高さを小さく
+Delete Group	グループを削除
+Delete Memory Location	メモリーロケーションを削除
+Delete Notes	ノートを削除
+Delete Unused Playlists	未使用のプレイリストを削除
+Deselect All	すべての選択を解除
+Dual-licensed MIT OR Apache-2.0. Made with Rust and egui.	MIT または Apache-2.0 のデュアルライセンス。Rust と egui で作られています。
+Duplicate Playlist	プレイリストを複製
+Edit Memory Location	メモリーロケーションを編集
+Edit Mode	編集モード
+Edit Note	ノートを編集
+Edit Tool	編集ツール
+Elastic Audio	Elastic Audio
+End	終了
+Export Clip Groups...	クリップグループを書き出し...
+Export Clips as Files...	クリップをファイルとして書き出し...
+Fast Forward	早送り
+Fill Window With Session	セッション全体をウィンドウに合わせる
+Format Time	時間の表示形式
+GRID	区切り
+Go to End	最後へ移動
+Go to End (End)	最後へ移動 (End)
+Go to Next Marker	次のマーカーへ移動
+Go to Previous Marker	前のマーカーへ移動
+Grabber	つかみツール
+Grid Value	区切りの単位
+Half-Speed Playback	半速再生
+Hide Track	トラックを隠す
+I/O Setup	I/O 設定
+Increase Track Height	トラックの高さを大きく
+Input Monitoring	入力モニタリング
+Input Trim	入力トリム
+Insert Plugin	プラグインを挿入
+Inspect Clip	クリップを調べる
+Inspect Session	セッションを調べる
+Inspect Track	トラックを調べる
+Keyboard Focus	キーボードフォーカス
+Keyboard Shortcuts	キーボードショートカット
+Length	長さ
+List CLAP Plugins	CLAP プラグインを一覧表示
+List Commands	コマンドを一覧表示
+List MIDI Notes	MIDI ノートを一覧表示
+List Plugins	プラグインを一覧表示
+List VST3 Plugins	VST3 プラグインを一覧表示
+Load Sampler Sample	サンプラーのサンプルを読み込み
+Load Track Preset	トラックプリセットを読み込み
+Locate	位置へ移動
+MIDI Editors to Back	MIDI エディターを最背面へ
+MIDI Editors to Front	MIDI エディターを最前面へ
+MIDI Merge	MIDI を重ねて録音
+Main Output Format	メイン出力の形式
+Mix Window View	ミックスウィンドウの表示
+Modify Group	グループを変更
+Move Clips	クリップを移動
+Move Insert	インサートを移動
+Move Notes	ノートを移動
+Move Track	トラックを移動
+Move to Folder	フォルダーへ移動
+Movies	ビデオ
+New Configuration	新規構成
+New Memory Location	新規メモリーロケーション
+New Tracks…	新規トラック…
+No object tracks. Use the Object view in the Mix window to route tracks as objects.	オブジェクトトラックがありません。ミックスウィンドウのオブジェクト表示で、トラックをオブジェクトとして割り当ててください。
+Nudge Clip Gain Down	クリップゲインを少し下げる
+Nudge Clip Gain Up	クリップゲインを少し上げる
+Nudge Value	微調整の幅
+Object / Bed	オブジェクト / ベッド
+Open Session...	セッションを開く...
+Open/Close Folder	フォルダーを開く/閉じる
+Parity Report	対応状況レポート
+Paste Clip Effects	クリップエフェクトをペースト
+Paste Clip Gain	クリップゲインをペースト
+Pause	一時停止
+Pencil	ペンシルツール
+Phase Invert	位相反転
+Pin Track	トラックをピン留め
+Place Audio File	オーディオファイルを配置
+Play	再生
+Play/Stop	再生/停止
+Playback Engine	再生エンジン
+Playlists	プレイリスト
+Post-Roll Amount	ポストロールの長さ
+Pre-Roll Amount	プリロールの長さ
+Promote to Main Playlist	メインプレイリストに設定
+REL GRID	相対区切り
+Recall	呼び出し
+Recall Memory Location	メモリーロケーションを呼び出し
+Record	録音
+Record Enable	録音待機
+Redo	やり直す
+Remove Insert	インサートを削除
+Remove Send	センドを削除
+Remove Tempo Change	テンポ変更を削除
+Remove from Folder	フォルダーから外す
+Rename Track	トラック名を変更
+Reset Edit Settings	編集設定をリセット
+Return to Zero	先頭に戻る
+Return to Zero (Home)	先頭に戻る (Home)
+Rewind	巻き戻し
+SHUFFLE	詰め移動
+SLIP	自由移動
+SPOT	位置指定
+Scroll Timeline	タイムラインをスクロール
+Scrubber	スクラブツール
+Search	検索
+Select Playlist	プレイリストを選択
+Selector	範囲選択ツール
+Send Level	センドレベル
+Set Clip Effects	クリップエフェクトを設定
+Set Edit Selection	編集選択範囲を設定
+Set Instrument	インストゥルメントを設定
+Set Instrument Parameter	インストゥルメントのパラメーターを設定
+Set Pan	パンを設定
+Set Plugin Parameter	プラグインのパラメーターを設定
+Set Plugin Parameters	プラグインのパラメーターを一括設定
+Set Send Surround Pan	センドのサラウンドパンを設定
+Set Surround Pan	サラウンドパンを設定
+Set UI State	画面の状態を設定
+Set Video Start	ビデオの開始位置を設定
+Set Volume	音量を設定
+Set Zoom	ズームを設定
+Show Grid Lines	区切り線を表示
+Shuffle Lock	詰め移動をロック
+Slip	自由移動
+Snap to Grid	区切りに吸着
+Solo	ソロ
+Solo Safe	ソロ除外
+Spot	位置指定
+Start	開始
+Stop	停止
+Store Plugin State	プラグインの状態を保存
+Sub Counter	サブカウンター
+Tab	タブ
+Tempo Change	テンポ変更
+Timecode rate	タイムコードのレート
+Toggle Group Active	グループの有効/無効を切り替え
+Toggle Mix/Edit	ミックス/編集を切り替え
+Track Comments	トラックのコメント
+Track Height	トラックの高さ
+Track Input	トラックの入力
+Track Output	トラックの出力
+Track Timebase	トラックのタイムベース
+Track View	トラックの表示
+Track options	トラックのオプション
+Tracks	トラック
+Transport Status	トランスポートの状態
+Trim Clip	クリップをトリム
+Undo	取り消す
+View Flags	表示フラグ
+Voice: dyn plays the track, off makes it inactive	ボイス: オンはトラックを再生、オフは無効にします
+Waveform Zoom	波形ズーム
+Window Configurations	ウィンドウ構成
+Workspaces to Front	ワークスペースを最前面へ
+Write Automation	オートメーションを書き込み
+Write Trim Automation	トリムオートメーションを書き込み
+Zoom By	ズーム率を指定
+Zoom In	ズームイン
+Zoom Out	ズームアウト
+Zoom Preset	ズームプリセット
+Zoom Toggle	ズーム切り替え
+Zoom to Selection	選択範囲にズーム
+Zoomer	ズームツール
+insert	インサート
+latch	ラッチ
+linear	直線
+mute	ミュート
+no audio engine	オーディオエンジンなし
+off	オフ
+pan	パン
+plugin	プラグイン
+quantize	クオンタイズ
+read	読み取り
+saved	保存済み
+send level	センドレベル
+send mute	センドミュート
+send pan	センドパン
+touch	タッチ
+touch/latch	タッチ/ラッチ
+trim	トリム
+volume	音量
+write	書き込み
+Audio Units	Audio Units
+Bars per system	1段あたりの小節数
+Bit Depth	ビット深度
+Bounces the edit selection, or the whole session when nothing is selected.	編集選択範囲をバウンスします。何も選択していないときは、セッション全体が対象です。
+Browse…	参照…
+Built-in	内蔵
+CLAP	CLAP
+Clear…	消去…
+Click a take (or the selection) to promote it to the main playlist	テイク（または選択範囲）をクリックすると、メインプレイリストに設定します
+Click: open instrument · right-click: change	クリック: インストゥルメントを開く · 右クリック: 変更
+Close Plugin Editor	プラグインエディターを閉じる
+Composer	作曲者
+Create	作成数
+DESTINATION	送り先
+Delete Unused...	未使用を削除...
+Don't Save	保存しない
+Edit Parameters…	パラメーターを編集…
+Format	形式
+Load and edit sounds in the plugin's own editor.	音色の読み込みと編集は、プラグイン専用のエディターで行います。
+Modify Group…	グループを変更…
+Name:	名前:
+New Group…	新規グループ…
+No parameters.	パラメーターはありません。
+Open Plugin Editor	プラグインエディターを開く
+Place on New Track	新規トラックに配置
+Place on Selected Track	選択したトラックに配置
+Post-roll	ポストロール
+Pre-roll	プリロール
+Presets ▾	プリセット ▾
+Remove send	センドを削除
+Rename bus…	バス名を変更…
+Route as an immersive object or to the bed	イマーシブ（立体音響）のオブジェクトとして、またはベッド（固定チャンネル）に送ります
+Sample Rate	サンプルレート
+Save	保存
+Scan CLAP	CLAP をスキャン
+Scan VST3	VST3 をスキャン
+Select Tracks in Group	グループ内のトラックを選択
+Show in the Mix window	ミックスウィンドウに表示
+This plugin has no editor of its own, or it is not loaded	このプラグインには専用エディターがないか、読み込まれていません
+Timecode Rate	タイムコードのレート
+Title	タイトル
+VST3	VST3
+bpm	bpm
+new bus...	新規バス...
+no insert	インサートなし
+modified	変更あり
+silent clock	無音クロック
+audio on	オーディオ有効
+GROUPS	グループ
+CLIPS	クリップ
+<ALL>	<すべて>
+Find clips	クリップを検索
+MEMORY LOCATIONS	メモリーロケーション
+UNDO HISTORY	取り消し履歴
+Tracks and Groups	トラックとグループ
+dyn	オン
+waveform	波形
+notes	ノート
+regions	クリップ
+blocks	ブロック
+clip_gain	クリップゲイン
+playlists	プレイリスト
+{} · {} Hz · {} · {} tracks · {}	{} · {} Hz · {} · {} トラック · {}
+16-bit	16ビット
+24-bit	24ビット
+32-bit float	32ビット浮動小数点
+Hide automation	オートメーションを隠す
+Show volume automation	音量オートメーションを表示
+TRACKS	トラック
+Views	表示
+1/2 note	2分音符
+1/4 note	4分音符
+1/8 note	8分音符
+1/16 note	16分音符
+1/32 note	32分音符
+1/64 note	64分音符
+Audio input: {}. {}	オーディオ入力: {}。{}
+Audio output: {}. {}	オーディオ出力: {}。{}
+AudioSuite · {}	オフライン処理 · {}
+Cannot record: {}	録音できません: {}
+Check the disk, then record again.	ディスクを確認してから、もう一度録音してください。
+Clip end pad ms	クリップ終端の余白 (ms)
+Clip start pad ms	クリップ先頭の余白 (ms)
+Close “{}” without saving?	「{}」を保存せずに閉じますか？
+Could not save the preset	プリセットを保存できませんでした
+Couldn't recover “{}”: {}	「{}」を復元できませんでした: {}
+Edit group	編集グループ
+Exported {} clip(s) to {}	{} 個のクリップを {} に書き出しました
+Input monitoring	入力モニタリング
+Join us on Discord	Discord に参加する
+Length ratio	長さの比率
+Level	レベル
+Loop-recorded {} take(s)	ループ録音: {} テイク
+MIDI in: all	MIDI 入力: すべて
+Main output: {}	メイン出力: {}
+Min strip duration ms	無音と判定する最短の長さ (ms)
+Mix group	ミックスグループ
+Mute send	センドをミュート
+New Tracks… ({})	新規トラック… ({})
+No audio input: {}	オーディオ入力がありません: {}
+No matches	一致するものはありません
+No track is record-enabled: click the R button on the track to record.	録音待機中のトラックがありません。録音するには、トラックの R ボタンをクリックしてください。
+Normalize to -0.1 dBFS	-0.1 dBFS にノーマライズ
+Nothing to record on yet: add a track with Track › New…, then click its R button.	録音先がありません。トラック › 新規… でトラックを追加し、R ボタンをクリックしてください。
+Opened {}	{} を開きました
+Opened {} ({} missing media)	{} を開きました（見つからないメディア: {} 件）
+Pan	パン
+Pan (drag; double-click centres)	パン（ドラッグで調整、ダブルクリックで中央）
+Panel layout could not be restored: {}	パネルの配置を復元できませんでした: {}
+Panel move was not applied: {}	パネルの移動は適用されませんでした: {}
+Peak dB	ピーク (dB)
+Playback stopped: {}. {}	再生を停止しました: {}。{}
+Plug it back in, then use Reconnect audio device in Setup ▸ Playback Engine.	接続し直してから、設定 ▸ 再生エンジンで「オーディオデバイスを再接続」を使ってください。
+Pre-fader	プリフェーダー
+Reconnect it, then use Reconnect audio device in Setup ▸ Playback Engine.	接続し直してから、設定 ▸ 再生エンジンで「オーディオデバイスを再接続」を使ってください。
+Record enable	録音待機
+Recorded {} clip(s)	{} 個のクリップを録音しました
+Recording stopped: {}. The take is kept up to there. {}	録音を停止しました: {}。そこまでのテイクは残してあります。{}
+Recovered “{}”, but {} audio file(s) are missing. Save it to keep the changes.	「{}」を復元しましたが、オーディオファイルが {} 件見つかりません。変更を残すには保存してください。
+Recovered “{}”. Save it to keep the changes.	「{}」を復元しました。変更を残すには保存してください。
+Revert “{}” to its last saved version?	「{}」を最後に保存した状態に戻しますか？
+Save changes to “{}” before closing?	閉じる前に「{}」の変更を保存しますか？
+Saved preset {}	プリセット {} を保存しました
+Send pan (drag; double-click centres)	センドのパン（ドラッグで調整、ダブルクリックで中央）
+Send {}	センド {}
+Send {} · Choose destination	センド {} · 送り先を選択
+Show track names	トラック名を表示
+Speed	速度
+Start from the demo session	デモセッションから始める
+Stop recording before recovering other work.	ほかの作業を復元する前に、録音を停止してください。
+The disk is too slow: this take has lost {} ms of input so far.	ディスクの書き込みが追いつきません: このテイクは、ここまでに入力 {} ms 分が失われています。
+Threshold dB	しきい値 (dB)
+Use Reconnect audio device in Setup ▸ Playback Engine, or restart SoundCraft.	設定 ▸ 再生エンジンで「オーディオデバイスを再接続」を使うか、SoundCraft を再起動してください。
+Use Reconnect audio device in Setup ▸ Playback Engine.	設定 ▸ 再生エンジンで「オーディオデバイスを再接続」を使ってください。
+User presets need the desktop app.	ユーザープリセットにはデスクトップアプリが必要です。
+Version {}	バージョン {}
+front	正面
+in	タイムベース:
+media offline	メディアがオフライン
+movie missing from session	セッションにビデオがありません
+new	新規
+Ticks	ティック
+the audio engine hit an internal error (see the log)	オーディオエンジンで内部エラーが発生しました（ログを参照）
+{} Your changes will be lost.	{} 変更は失われます。
+“{}” stopped asking for audio	「{}」が応答しなくなりました
+“{}” was disconnected	「{}」の接続が切れました
+Bounce	バウンス
+OK	OK
+Strip	除去
+getartcraft.com/apps/soundcraft	getartcraft.com/apps/soundcraft
+INSERTS A-E	インサート A-E
+INSERTS F-J	インサート F-J
+SENDS A-E	センド A-E
+SENDS F-J	センド F-J
+I A-E	I A-E
+I F-J	I F-J
+S A-E	S A-E
+S F-J	S F-J
+PREAMP	プリアンプ
+INSTRUMENT	インストゥルメント
+INST	インスト
+I / O	入出力
+auto {}	自動{}
+t/l	T/L
+no group	グループなし
+nogrp	なし
+audio	オーディオ
+aux	AUX
+master	マスター
+midi	MIDI
+inst	インスト
+vca	VCA
+folder	フォルダー
+video	ビデオ
++ Marker	+ マーカー
++ Selection	+ 選択範囲
+Location	位置
+Type	種類
+marker	マーカー
+About	概要
+Contributors	貢献者
+Models	モデル
+Start (ticks)	開始（ティック）
+Note	ノート
+Vel	ベロシティ
+#	#
+SESSION NAME:	セッション名:
+SAMPLE RATE:	サンプルレート:
+BIT DEPTH:	ビット深度:
+TIMECODE FORMAT:	タイムコード形式:
+# OF AUDIO TRACKS:	オーディオトラック数:
+# OF AUDIO CLIPS:	オーディオクリップ数:
+# OF AUDIO FILES:	オーディオファイル数:
+F I L E S  I N  S E S S I O N	セッション内のファイル
+Filename	ファイル名
+T R A C K  L I S T I N G	トラック一覧
+TRACK NAME:	トラック名:
+COMMENTS:	コメント:
+STATE:	状態:
+CHANNEL	チャンネル
+EVENT	イベント
+CLIP NAME	クリップ名
+START TIME	開始時間
+END TIME	終了時間
+DURATION	長さ
+STATE	状態
+M A R K E R S  L I S T I N G	マーカー一覧
+LOCATION	位置
+NAME	名前
+Muted	ミュート中
+Unmuted	ミュートなし
+Inactive	無効
+Int16	16ビット
+Int24	24ビット
+Float32	32ビット浮動小数点
+{} sec	{} 秒
+New Tracks	新規トラック
+New Session	新規セッション
+Bounce Mix	ミックスをバウンス
+Rename Clip	クリップ名を変更
+Rename Marker	マーカー名を変更
+Tempo Change (BPM)	テンポ変更 (BPM)
+Create Group	グループを作成
+Session Setup	セッション設定
+Score Setup	スコア設定
+Revert to Saved	保存した状態に戻す
+Unsaved Changes	未保存の変更
+Fills the selection on the selected tracks with a new clip.	選択したトラックの選択範囲を、新しいクリップで埋めます。
+Processes the selected clips and replaces them with rendered audio.	選択したクリップを処理し、処理後のオーディオに置き換えます。
+Import Audio	オーディオを読み込み
+Import MIDI	MIDI を読み込み
+Open Session	セッションを開く
+Quantize strength	クオンタイズの強さ
+Repeat	繰り返し
+Save Session As	セッションを別名で保存
+Shift (seconds)	ずらす量（秒）
+unknown command `{}`	不明なコマンドです: `{}`
+`{}` is not available: {}	`{}` は使えません: {}
+bad parameters for `{}`: {}	`{}` のパラメーターが正しくありません: {}
+unsupported: {}	未対応です: {}
+internal error in `{}`: {}	`{}` で内部エラーが発生しました: {}
+stop recording first	先に録音を停止してください
+the session has not been saved	セッションはまだ保存されていません
+the session has no tracks	セッションにトラックがありません
+the clipboard is empty	クリップボードが空です
+select clips or files in the Clip List	クリップリストでクリップまたはファイルを選択してください
+nothing to undo	取り消せる操作がありません
+nothing to redo	やり直せる操作がありません
+nothing is selected	何も選択されていません
+no selected clip has a sync point	選択したクリップに同期ポイントがありません
+no previous selection to restore	復元できる以前の選択がありません
+no markers on the clipboard	クリップボードにマーカーがありません
+no clip gain has been copied	コピーされたクリップゲインがありません
+no clip effects have been copied	コピーされたクリップエフェクトがありません
+no automation has been copied	コピーされたオートメーションがありません
+make an edit selection first	先に編集選択範囲を作成してください
+Adds ±1 LSB triangular dither when writing 16- or 24-bit files. Leave it off when the master chain already dithers.	16 ビット・24 ビットのファイルに書き出すとき、±1 LSB の三角分布ディザーを加えます。マスターチェーンで既にディザーをかけている場合はオフにしてください。
+Auto Rename...	自動で名前を付ける...
+Auto Rename…	自動で名前を付ける…
+Check for Updates…	アップデートを確認…
+Dither (TPDF)	ディザー (TPDF)
+Extract	抽出
+Record (F12 or Cmd+Space)	録音 (F12 または Cmd+Space)
+Rename…	名前を変更…
+Scroll Into View	表示位置へスクロール
+Strip Silence Rectangles	無音除去の矩形
+1 day ago	1 日前
+1 hour ago	1 時間前
+1 minute ago	1 分前
+C major	ハ長調
+Check for Updates	アップデートを確認
+Checking for updates…	アップデートを確認しています…
+Close	閉じる
+Could not check for updates:	アップデートを確認できませんでした:
+FX	FX
+Presets v	プリセット v
+SoundCraft {} is currently the newest version available.	SoundCraft {} は最新バージョンです。
+Suffix	末尾の文字
+Text for naming the clips that editing makes from the selected clips:	選択したクリップから編集で作られるクリップに付ける名前:
+Update check is not supported in the web browser.	Web ブラウザー版ではアップデートを確認できません。
+Number	番号
+Zeros	ゼロ埋めの桁数
+Starting Number	開始番号
+Number of Places	桁数
+Audio Track	オーディオトラック
+Aux Input	AUX 入力
+Master Fader	マスターフェーダー
+MIDI Track	MIDI トラック
+Instrument Track	インストゥルメントトラック
+VCA Master	VCA マスター
+Routing Folder Track	ルーティングフォルダートラック
+Video Track	ビデオトラック
+Linear	直線
+Equal Power	等パワー
+S-Curve	S 字カーブ
+Exponential	指数カーブ
+Logarithmic	対数カーブ
+Remove	削除
+semitones	半音
+times	回
+selection	選択範囲
+32f-bit	32ビット浮動小数点
+Clip Looping	クリップのループ
+Rename Selected Clips	選択したクリップの名前を変更
+Number of Loops	ループ回数
+Loop Length	ループの長さ
+Loop Until End of Session or Next Clip	セッションの終わりか次のクリップまでループ
+Without a name, the clips keep their names.	名前を空にすると、クリップは今の名前のままです。
+First clip: {}	最初のクリップ: {}
+New clips are named {}, {} and so on.	新しいクリップの名前は {}、{} のように続きます。
+Importing {}	{} を読み込み中
+{} more	ほか {} 件
+Send {} · {}	センド {} · {}
+Remove {} from the session?	{}をセッションから削除しますか？
+the clip "{}"	クリップ「{}」
+the file "{}"	ファイル「{}」
+1 clip	1 個のクリップ
+{} clips	{} 個のクリップ
+1 file	1 個のファイル
+{} files	{} 個のファイル
+{} and {}	{}と{}
+a clip on the timeline, which is removed too.	タイムライン上の 1 個のクリップで使われています。そのクリップも削除されます。
+{} clips on the timeline, which are removed too.	タイムライン上の {} 個のクリップで使われています。それらのクリップも削除されます。
+It is used by {}	このファイルは{}
+They are used by {}	これらのファイルは{}
+"{}" is used by {}	「{}」は{}
+{} of the files are used by {}	ファイルのうち {} 個は{}
+The file stays on disk.	ファイルはディスクに残ります。
+The files stay on disk.	ファイルはディスクに残ります。
+s	秒
+%	%
+Hz	Hz
+samples	サンプル

@@ -1,4 +1,5 @@
 use super::{Color32, Rect, SoundApp, TrackId, Ui, json, pos2, vec2};
+use crate::i18n;
 
 /// An insert's menu: a search field that takes typing at once, then (until something is typed)
 /// Bypass and removal and the plugins by category and format.
@@ -11,10 +12,10 @@ pub fn plugin_menu(app: &mut SoundApp, ui: &mut Ui, id: TrackId, slot: usize, oc
         return;
     }
     if occupied {
-        if ui.button("Bypass").clicked() {
+        if ui.button(i18n::tr("Bypass")).clicked() {
             run_pick(app, ui, "mix.insert_bypass", json!({"track": id.0, "slot": slot}));
         }
-        if ui.button("no insert").clicked() {
+        if ui.button(i18n::tr("no insert")).clicked() {
             run_pick(app, ui, "mix.insert_remove", json!({"track": id.0, "slot": slot}));
         }
         ui.separator();
@@ -54,7 +55,7 @@ pub fn instrument_menu(app: &mut SoundApp, ui: &mut Ui, id: TrackId) {
     let current = app.engine.session().track(id).and_then(|t| t.instrument.clone());
     if let Some(info) = current.as_ref().and_then(|i| plugin_info(&i.plugin)) {
         ui.label(egui::RichText::new(info.name).strong());
-        if current.as_ref().is_some_and(|i| !soundcraft_mix::is_third_party(&i.plugin)) && ui.button("Edit Parameters…").clicked() {
+        if current.as_ref().is_some_and(|i| !soundcraft_mix::is_third_party(&i.plugin)) && ui.button(i18n::tr("Edit Parameters…")).clicked() {
             if !app.ui.plugin_windows.contains(&(id, slot)) {
                 app.ui.plugin_windows.push((id, slot));
             }
@@ -64,11 +65,11 @@ pub fn instrument_menu(app: &mut SoundApp, ui: &mut Ui, id: TrackId) {
             && p.has_editor(id, slot)
         {
             if p.editor_open(id, slot) {
-                if ui.button("Close Plugin Editor").clicked() {
+                if ui.button(i18n::tr("Close Plugin Editor")).clicked() {
                     p.close_editor(id, slot);
                     ui.close();
                 }
-            } else if ui.button("Open Plugin Editor").clicked() {
+            } else if ui.button(i18n::tr("Open Plugin Editor")).clicked() {
                 if let Err(e) = p.open_editor(id, slot) {
                     app.ui.status = format!("{}: {e}", info.name);
                 }
@@ -78,7 +79,7 @@ pub fn instrument_menu(app: &mut SoundApp, ui: &mut Ui, id: TrackId) {
         ui.separator();
     }
     let mut picked = None;
-    ui.menu_button("Built-in", |ui| {
+    ui.menu_button(i18n::tr("Built-in"), |ui| {
         for p in soundcraft_dsp::plugins().iter().filter(|p| p.is_instrument) {
             if ui.button(p.name).clicked() {
                 picked = Some(p.id.to_string());
@@ -141,15 +142,15 @@ fn plugin_search(ui: &mut Ui, search: &MenuSearch, instruments: bool) -> Option<
         }
     });
     if n == 0 {
-        ui.weak("No matches");
+        ui.weak(i18n::tr("No matches"));
     }
     if clap.is_none() || vst3.is_none() {
         ui.separator();
         ui.horizontal(|ui| {
-            if clap.is_none() && ui.small_button("Scan CLAP").clicked() {
+            if clap.is_none() && ui.small_button(i18n::tr("Scan CLAP")).clicked() {
                 soundcraft_clap_host::scan();
             }
-            if vst3.is_none() && ui.small_button("Scan VST3").clicked() {
+            if vst3.is_none() && ui.small_button(i18n::tr("Scan VST3")).clicked() {
                 soundcraft_vst3_host::scan();
             }
         });
@@ -256,20 +257,20 @@ struct MenuPlugin {
 /// id picked. Each format is scanned the first time its submenu opens, then cached by its host.
 fn hosted_menus(ui: &mut Ui, instruments: bool) -> Option<String> {
     let mut picked = None;
-    ui.menu_button("CLAP", |ui| {
+    ui.menu_button(i18n::tr("CLAP"), |ui| {
         let list = soundcraft_clap_host::scan().into_iter().filter(|d| d.is_instrument == instruments);
         if let Some(p) = vendor_menus(ui, list.map(|d| MenuPlugin { id: d.id, name: d.name, vendor: d.vendor }).collect(), "No CLAP plugins found") {
             picked = Some(p);
         }
     });
-    ui.menu_button("VST3", |ui| {
+    ui.menu_button(i18n::tr("VST3"), |ui| {
         let list = soundcraft_vst3_host::scan().into_iter().filter(|d| d.is_instrument == instruments);
         if let Some(p) = vendor_menus(ui, list.map(|d| MenuPlugin { id: d.id, name: d.name, vendor: d.vendor }).collect(), "No VST3 plugins found") {
             picked = Some(p);
         }
     });
     if cfg!(target_os = "macos") {
-        ui.menu_button("Audio Units", |ui| {
+        ui.menu_button(i18n::tr("Audio Units"), |ui| {
             let list = soundcraft_au_host::scan().into_iter().filter(|d| d.is_instrument == instruments);
             if let Some(p) = vendor_menus(ui, list.map(|d| MenuPlugin { id: d.id, name: d.name, vendor: d.vendor }).collect(), "No Audio Units found")
             {

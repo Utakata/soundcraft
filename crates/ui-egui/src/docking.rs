@@ -1,6 +1,7 @@
 //! Application panel identities and persistence around the shared docking renderer.
 //! Document contents remain owned by their existing view implementations.
 
+use crate::i18n;
 use craft_ui::docking::{
     Action, Column, DockArea, DockCommand, DockError, DockOperation, DockStyle, FloatSpace, Floating, Group, Layout, Location, Node, PanelLimits,
     Permissions, Placement, Side, Target, UiDock, Zone, ZoneName,
@@ -24,12 +25,12 @@ impl Panel {
     pub const ALL: &[Self] = &[Self::Canvas, Self::Tracks, Self::Clips, Self::Midi, Self::Memory, Self::History];
     fn label(self) -> &'static str {
         match self {
-            Self::Canvas => "Session",
-            Self::Tracks => "Tracks and Groups",
-            Self::Clips => "Clips",
-            Self::Midi => "MIDI Editor",
-            Self::Memory => "Memory Locations",
-            Self::History => "Undo History",
+            Self::Canvas => i18n::tr("Session"),
+            Self::Tracks => i18n::tr("Tracks and Groups"),
+            Self::Clips => i18n::tr("Clips"),
+            Self::Midi => i18n::tr("MIDI Editor"),
+            Self::Memory => i18n::tr("Memory Locations"),
+            Self::History => i18n::tr("Undo History"),
         }
     }
 }

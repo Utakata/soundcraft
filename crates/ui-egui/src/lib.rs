@@ -12,6 +12,7 @@ pub mod dialogs;
 pub mod docking;
 pub mod edit_window;
 pub mod fonts;
+pub mod i18n;
 pub mod icons;
 pub mod import;
 pub mod menus;
@@ -128,6 +129,8 @@ pub struct UiState {
     pub configurations: Vec<(String, Value)>,
     /// Appearance (`ui.theme`): dark by default, light or follow the system on request.
     pub theme: theme::ThemeMode,
+    /// The interface language (`ui.language`): English, or Japanese where its text exists.
+    pub language: i18n::Language,
     /// The main window's size (logical points) and maximized state, and the interface scale, as
     /// the desktop app last saw them; it restores them at launch.
     pub window_size: [f32; 2],
@@ -191,6 +194,7 @@ impl Default for UiState {
             workspace_dir: String::new(),
             configurations: Vec::new(),
             theme: theme::ThemeMode::Dark,
+            language: i18n::Language::English,
             window_size: [1600.0, 1000.0],
             window_maximized: false,
             ui_scale: 1.0,

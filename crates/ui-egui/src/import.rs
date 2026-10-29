@@ -5,6 +5,7 @@
 //! the control channel still run synchronously.
 
 use crate::SoundApp;
+use crate::i18n;
 use serde_json::Value;
 use std::collections::VecDeque;
 
@@ -143,8 +144,8 @@ pub fn show(app: &SoundApp, ctx: &egui::Context) {
             egui::Frame::popup(ui.style()).show(ui, |ui| {
                 ui.horizontal(|ui| {
                     ui.add(egui::Spinner::new());
-                    let more = if waiting > 0 { format!(" ({waiting} more)") } else { String::new() };
-                    ui.label(format!("Importing {name}{more}"));
+                    let more = if waiting > 0 { format!(" ({})", i18n::trf("{} more", &[&waiting.to_string()])) } else { String::new() };
+                    ui.label(i18n::trf("Importing {}", &[&format!("{name}{more}")]));
                 });
             });
         },

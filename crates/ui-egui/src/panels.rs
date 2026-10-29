@@ -1,6 +1,7 @@
 //! Side panels (Tracks, Groups, Clips) and floating windows.
 
 use crate::SoundApp;
+use crate::i18n;
 use crate::theme::{Tokens, bold, mono, regular, rgb};
 use egui::{Align2, Color32, Rect, Sense, Stroke, Ui, pos2, vec2};
 use serde_json::json;
@@ -33,7 +34,7 @@ fn panel_header(ui: &mut Ui, title: &str) {
     let t = Tokens::current();
     let (r, _) = ui.allocate_exact_size(vec2(ui.available_width(), 22.0), Sense::hover());
     ui.painter().rect_filled(r, 0.0, t.panel_bg2);
-    ui.painter().text(pos2(r.min.x + 8.0, r.center().y), Align2::LEFT_CENTER, title, bold(11.5), t.header_text);
+    ui.painter().text(pos2(r.min.x + 8.0, r.center().y), Align2::LEFT_CENTER, i18n::tr(title), bold(11.5), t.header_text);
     ui.painter().line_segment([pos2(r.min.x, r.max.y), pos2(r.max.x, r.max.y)], Stroke::new(1.0, t.border));
 }
 

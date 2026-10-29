@@ -1,5 +1,6 @@
 use super::plugin_menu::{MenuSearch, menu_row};
 use super::{Route, SoundApp, Track, TrackId, Ui, json};
+use crate::i18n;
 
 pub(crate) fn route_name(app: &SoundApp, r: &Route) -> String {
     match r {
@@ -50,7 +51,7 @@ fn route_menu(app: &mut SoundApp, ui: &mut Ui, id: TrackId, input: bool) {
         let _ = app.run(cmd, json!({"track": id.0, key: visible[i]}));
         ui.close();
     }
-    if ui.button("new bus...").clicked() {
+    if ui.button(i18n::tr("new bus...")).clicked() {
         let mut n = busses.len() + 1;
         while busses.contains(&format!("Bus {n}")) || app.engine.session().track_by_name(&format!("Bus {n}")).is_some() {
             n += 1;

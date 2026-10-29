@@ -6,6 +6,7 @@ use super::{
     Align2, AutoParam, Clip, ClipContent, ClipId, Color32, Dialog, EditMode, Gesture, GridValue, NoteValue, Pos2, Range, Rect, Samples, Sense,
     Session, SoundApp, Spot, Stroke, StrokeKind, Tokens, Tool, Track, TrackId, Ui, json, ops, pos2, regular, vec2,
 };
+use crate::i18n;
 
 // ---- interaction -----------------------------------------------------------------------------
 
@@ -506,7 +507,7 @@ pub(super) fn new_midi_clip(app: &mut SoundApp, s: &Session, track: TrackId, fro
 
 fn clip_context_menu(app: &mut SoundApp, ui: &mut Ui, clip: Option<ClipId>) {
     let Some(c) = clip else {
-        if ui.button("Paste").clicked() {
+        if ui.button(i18n::tr("Paste")).clicked() {
             let _ = app.run("edit.paste", json!({}));
         }
         return;
@@ -521,16 +522,16 @@ fn clip_context_menu(app: &mut SoundApp, ui: &mut Ui, clip: Option<ClipId>) {
         ("Bring to Front", "clip.bring_to_front"),
         ("Send to Back", "clip.send_to_back"),
     ] {
-        if ui.button(label).clicked() {
+        if ui.button(i18n::tr(label)).clicked() {
             let _ = app.run(cmd, json!({"clips": ids}));
         }
     }
     ui.separator();
-    if ui.button("Rename...").clicked() {
+    if ui.button(i18n::tr("Rename...")).clicked() {
         let name = app.engine.session().find_clip(c).map(|(_, x)| x.name.clone()).unwrap_or_default();
         app.dialogs.open_rename_clip(c, &name);
     }
-    if ui.button("Delete").clicked() {
+    if ui.button(i18n::tr("Delete")).clicked() {
         let _ = app.run("edit.select", json!({"clips": ids}));
         let _ = app.run("edit.clear", json!({}));
     }

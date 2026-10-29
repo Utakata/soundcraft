@@ -1,6 +1,7 @@
 //! The Mix window: one channel strip per track.
 
 use crate::SoundApp;
+use crate::i18n;
 use crate::theme::{Tokens, bold, regular, rgb};
 use crate::widgets::{
     PannerEdit, PannerSpeaker, SelectorLabels, db_text, fader, fader_slot, groove, inset, meter, meter_scale, multi_meter, pan_knob, pan_text,
@@ -141,10 +142,10 @@ fn short_label(text: &str) -> &str {
 fn section_label(ui: &Ui, r: Rect, text: &str, narrow: bool) {
     let p = ui.painter();
     let color = Tokens::current().section_label;
-    let text = if narrow { short_label(text) } else { text };
-    let mut galley = p.layout_no_wrap(text.to_owned(), bold(10.0), color);
+    let short = i18n::tr(short_label(text));
+    let mut galley = p.layout_no_wrap(if narrow { short } else { i18n::tr(text) }.to_owned(), bold(10.0), color);
     if galley.size().x > r.width() - 8.0 {
-        galley = p.layout_no_wrap(short_label(text).to_owned(), bold(10.0), color);
+        galley = p.layout_no_wrap(short.to_owned(), bold(10.0), color);
     }
     p.galley(Align2::CENTER_CENTER.anchor_size(pos2(r.center().x, r.min.y + 7.0), galley.size()).min, galley, color);
 }
@@ -258,7 +259,7 @@ fn instrument_section(app: &mut SoundApp, ui: &mut Ui, cx: &StripCtx<'_>, mut y:
             _ if track.kind == TrackKind::Instrument => instrument_slot(app, ui, track, sr),
             Some(k) => insert_slot(app, ui, track, k, sr),
             None if track.kind == TrackKind::Midi => {
-                ui.painter().text(sr.center(), Align2::CENTER_CENTER, "MIDI in: all", regular(9.0), t.text_dim);
+                ui.painter().text(sr.center(), Align2::CENTER_CENTER, i18n::tr("MIDI in: all"), regular(9.0), t.text_dim);
             }
             None => {}
         }
@@ -277,7 +278,10 @@ fn object_section(app: &mut SoundApp, ui: &mut Ui, cx: &StripCtx<'_>, mut y: f32
             let on = app.engine.session().edit.flag(&format!("object.{}", id.0));
             let mut c = ui.new_child(egui::UiBuilder::new().max_rect(sec));
             let label = egui::RichText::new(if on { "OBJECT" } else { "BED" }).font(bold(9.0));
-            if c.add_sized(sec.size(), egui::Button::new(label).selected(on)).on_hover_text("Route as an immersive object or to the bed").clicked() {
+            if c.add_sized(sec.size(), egui::Button::new(label).selected(on))
+                .on_hover_text(i18n::tr("Route as an immersive object or to the bed"))
+                .clicked()
+            {
                 let _ = app.run("track.object", json!({"tracks": [id.0], "object": !on}));
             }
         }
@@ -389,7 +393,7 @@ fn io_section(app: &mut SoundApp, ui: &mut Ui, cx: &StripCtx<'_>, mut y: f32) ->
             in_r.height(),
             &input,
             t.text,
-            SelectorLabels { name: &format!("Input for {}", track.name), value: &input, tooltip: "Input" },
+            SelectorLabels { name: &format!("Input for {}", track.name), value: &input, tooltip: i18n::tr("Input") },
         );
         route_popup(app, &resp, id, true);
         let mut c = ui.new_child(egui::UiBuilder::new().id_salt(("mix-output", id.0)).max_rect(out_r));
@@ -400,7 +404,7 @@ fn io_section(app: &mut SoundApp, ui: &mut Ui, cx: &StripCtx<'_>, mut y: f32) ->
             out_r.height(),
             &output,
             t.text,
-            SelectorLabels { name: &format!("Output for {}", track.name), value: &output, tooltip: "Output" },
+            SelectorLabels { name: &format!("Output for {}", track.name), value: &output, tooltip: i18n::tr("Output") },
         );
         route_popup(app, &resp, id, false);
         // Automation mode.
@@ -415,11 +419,12 @@ fn io_section(app: &mut SoundApp, ui: &mut Ui, cx: &StripCtx<'_>, mut y: f32) ->
         } else {
             t.auto_write
         };
-        let full_label = format!("auto {}", mode.label());
+        let mode_label = i18n::tr(mode.label());
+        let full_label = i18n::trf("auto {}", &[mode_label]);
         let label = if mode == soundcraft_model::AutomationMode::TouchLatch {
-            if narrow { "t/l" } else { mode.label() }
+            if narrow { i18n::tr("t/l") } else { mode_label }
         } else if narrow {
-            mode.label()
+            mode_label
         } else {
             &full_label
         };
@@ -433,7 +438,7 @@ fn io_section(app: &mut SoundApp, ui: &mut Ui, cx: &StripCtx<'_>, mut y: f32) ->
         );
         egui::Popup::menu(&resp).show(|ui| {
             for m in soundcraft_model::AutomationMode::ALL {
-                if ui.selectable_label(m == mode, m.label()).clicked() {
+                if ui.selectable_label(m == mode, i18n::tr(m.label())).clicked() {
                     let _ = app.run("mix.automation_mode", json!({"track": id.0, "mode": m.label()}));
                 }
             }
@@ -448,7 +453,7 @@ fn group_selector(app: &mut SoundApp, ui: &mut Ui, cx: &StripCtx<'_>, mut y: f32
     let StripCtx { track, id, narrow, x0, inner_w, .. } = *cx;
     let t = Tokens::current();
     // Group selector.
-    let no_group = if narrow { "nogrp" } else { "no group" };
+    let no_group = i18n::tr(if narrow { "nogrp" } else { "no group" });
     let gname = app.engine.session().groups.iter().find(|g| g.members.contains(&id)).map_or(no_group.to_string(), |g| g.name.clone());
     let gr = Rect::from_min_size(pos2(x0 + 2.0, y), vec2(inner_w - 4.0, 16.0));
     let mut c = ui.new_child(egui::UiBuilder::new().max_rect(gr));
@@ -501,7 +506,7 @@ fn pan_section(app: &mut SoundApp, ui: &mut Ui, cx: &StripCtx<'_>, mut y: f32) -
             let mut c = ui.new_child(egui::UiBuilder::new().max_rect(kr));
             let mut v = track.mixer.pan.get(i).copied().unwrap_or(0.0);
             let before = v;
-            let resp = pan_knob(&mut c, ks, &mut v, "Pan (drag; double-click centres)");
+            let resp = pan_knob(&mut c, ks, &mut v, i18n::tr("Pan (drag; double-click centres)"));
             if (v - before).abs() > f32::EPSILON {
                 let _ = app.engine.execute_merged("mix.pan", &json!({"track": id.0, "pan": v, "index": i}), &format!("pan:{}:{i}", id.0));
             }
@@ -639,7 +644,7 @@ fn name_and_readout(app: &mut SoundApp, ui: &mut Ui, cx: &StripCtx<'_>) {
         TrackKind::Folder => "folder",
         TrackKind::Video => "video",
     };
-    ui.painter().text(pos2(vr.center().x, vr.max.y + 9.0), Align2::CENTER_CENTER, kind, regular(9.5), t.text_dim);
+    ui.painter().text(pos2(vr.center().x, vr.max.y + 9.0), Align2::CENTER_CENTER, i18n::tr(kind), regular(9.5), t.text_dim);
     let nr = Rect::from_min_size(pos2(x0, r.max.y - 26.0), vec2(inner_w, 18.0));
     ui.painter().rect(
         nr,
