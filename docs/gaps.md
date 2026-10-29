@@ -23,7 +23,7 @@ When you close a gap, delete its entry (or shrink it) in the same PR, and bump t
 | G-06 | (Record-to-disk part: alpha blocker for the tracking row) Sources decoded whole into RAM; recording into RAM | Performance | [hardware-parity.md](hardware-parity.md) | 15–25 |
 | G-07 | Nothing is compared against Pro Tools' output (no fidelity harness) | Features | this file | 20–30 |
 | G-08 | Built-in plugin catalogue thin and unverified | Features | [plugin-parity.md](plugin-parity.md) | 80–120 |
-| G-09 | English only, no string catalog, no CJK/RTL rendering | Localization | [localization-parity.md](localization-parity.md) | 70–110 |
+| G-09 | English plus partial Japanese; other languages, remaining strings, RTL and complex scripts, web fonts | Localization | [localization-parity.md](localization-parity.md) | 60–100 |
 | G-10 | No control surfaces (HUI/MCU, EUCON) | Hardware | [hardware-parity.md](hardware-parity.md) | 40–70 |
 | G-11 | No external sync (MTC, LTC, MIDI clock, video reference) | Hardware | [hardware-parity.md](hardware-parity.md) | 15–25 |
 | G-12 | Immersive delivery: no Dolby Atmos/ADM BWF, MPEG-H, binaural | Features | [file-format-parity.md](file-format-parity.md) | 50–80 |
@@ -138,9 +138,10 @@ parametric request #139. ≈ 80–120 h.
 
 ### G-09. Localization
 
-See [`localization-parity.md`](localization-parity.md): no catalog, every string literal in code;
-egui has no complex-script shaping or RTL; no CJK font fallback (PR #141 open). ≈ 70–110 h plus
-native-speaker review.
+See [`localization-parity.md`](localization-parity.md): strings are English literals translated at
+draw time (`i18n::tr`) from `crates/ui-egui/i18n/<lang>/*.tsv`; Japanese covers the menus and part of
+the windows. Still open: the remaining literals, native-speaker review, other languages, egui has no
+complex-script shaping or RTL, and the web build has no system CJK font. ≈ 60–100 h.
 
 ### G-10. Control surfaces
 

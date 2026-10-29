@@ -50,7 +50,7 @@ measures readiness and adds hardware, localization and field bug reports.
 | UI/UX fidelity | ~55 % | 60–100 | [ui-parity.md](docs/ui-parity.md) |
 | File formats | ~40 % | 70–120 | [file-format-parity.md](docs/file-format-parity.md) |
 | Hardware (interfaces, MIDI, surfaces, sync) | ~12 % | 110–180 | [hardware-parity.md](docs/hardware-parity.md) |
-| Localization | ~12 % (1 of Pro Tools' 8 languages) | 70–110 | [localization-parity.md](docs/localization-parity.md) |
+| Localization | ~20 % (English; Japanese partial: 2 of Pro Tools' 8 languages started) | 60–100 | [localization-parity.md](docs/localization-parity.md) |
 | Performance | ~35 % (unmeasured) | 40–70 | [hardware-parity.md](docs/hardware-parity.md#performance) |
 | Stability | ~45 % | 50–80 | [gaps.md](docs/gaps.md) |
 | Platforms | ~65 % (5 platforms built, macOS exercised) | 20–40 | [gaps.md](docs/gaps.md) |
@@ -91,7 +91,7 @@ Weights and evidence per row: [target-app-parity.md](docs/target-app-parity.md#f
 | French | fr | none (PR #143 open) | 0 % |
 | Portuguese | pt | none | 0 % |
 | Indonesian | id | none | 0 % |
-| Japanese | ja | none | 0 % |
+| Japanese | ja | partial (menus, Appearance, many windows; no native review) | menus 100 % |
 | German | de | none | 0 % |
 | Korean | ko | none | 0 % |
 | Vietnamese | vi | none | 0 % |

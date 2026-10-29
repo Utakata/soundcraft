@@ -1,5 +1,6 @@
 //! The Spot dialog: exact positions for clips in Spot mode.
 
+use crate::i18n;
 use crate::theme::mono;
 use egui::{Id, RichText, TextEdit, Ui, vec2};
 use serde_json::{Value, json};
@@ -117,10 +118,10 @@ fn recorded_at(s: &Session, time_reference: u64) -> Samples {
 pub fn fields(ui: &mut Ui, s: &Session, d: &mut Spot) {
     let show = |at: Samples, f: TimeFormat| s.format_position(at, f);
     egui::Grid::new("spot").num_columns(2).spacing(vec2(10.0, 6.0)).show(ui, |ui| {
-        ui.label("Time Scale");
-        egui::ComboBox::from_id_salt("spot_scale").selected_text(d.format.label()).show_ui(ui, |ui| {
+        ui.label(i18n::tr("Time Scale"));
+        egui::ComboBox::from_id_salt("spot_scale").selected_text(i18n::tr(d.format.label())).show_ui(ui, |ui| {
             for f in TimeFormat::ALL {
-                ui.selectable_value(&mut d.format, f, f.label());
+                ui.selectable_value(&mut d.format, f, i18n::tr(f.label()));
             }
         });
         ui.end_row();
@@ -128,7 +129,7 @@ pub fn fields(ui: &mut Ui, s: &Session, d: &mut Spot) {
             if i == 1 && matches!(d.target, Target::Trim { .. }) {
                 continue;
             }
-            ui.label(label);
+            ui.label(i18n::tr(label));
             if d.editable(i) {
                 let id = Id::new(("spot_field", i));
                 if !ui.memory(|m| m.has_focus(id)) {
@@ -150,14 +151,14 @@ pub fn fields(ui: &mut Ui, s: &Session, d: &mut Spot) {
             }
             ui.end_row();
         }
-        ui.label("Duration");
+        ui.label(i18n::tr("Duration"));
         ui.label(RichText::new(format_length(d.start, d.len, d.format, s.sample_rate, &s.tempo, s.frame_rate)).font(mono(13.0)));
         ui.end_row();
         if let Some(at) = d.stamp {
-            ui.label("Original Time Stamp");
+            ui.label(i18n::tr("Original Time Stamp"));
             ui.horizontal(|ui| {
                 ui.label(RichText::new(show(at, TimeFormat::Timecode)).font(mono(13.0)));
-                if ui.button("Use").on_hover_text("Spot to where it was recorded").clicked() {
+                if ui.button(i18n::tr("Use")).on_hover_text(i18n::tr("Spot to where it was recorded")).clicked() {
                     d.start = at;
                 }
             });

@@ -1,0 +1,24 @@
+# Japanese labels outside the menu catalog: menu-bar extras, the Appearance window, Undo and Redo. Format: English<TAB>日本語
+About SoundCraft	SoundCraft について
+Session Info	セッション情報
+Session Audio Health	セッションのオーディオ状態
+Quit	終了
+Quit SoundCraft	SoundCraft を終了
+Hide SoundCraft	SoundCraft を隠す
+Hide Others	ほかを隠す
+Processes selected clips offline	選択したクリップをオフラインで処理
+Mix in Separate Window	ミックスを別ウィンドウで表示
+Show Edit and Mix at once, e.g. one per monitor	編集とミックスを同時に表示（例: モニターごとに1つ）
+Instrument	インストゥルメント
+Select an instrument track	インストゥルメントトラックを選択
+Undo {}	{}を取り消す
+Redo {}	{}をやり直す
+Interface scale	画面の拡大率
+Reduce motion	動きを抑える
+Theme	テーマ
+Auto-update configuration	構成を自動更新
+Reset	リセット
+Language	言語
+Dark	ダーク
+Light	ライト
+System	システム

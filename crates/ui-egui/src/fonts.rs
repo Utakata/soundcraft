@@ -29,6 +29,10 @@ const BOLD: &[(&str, u32)] = &[
     ("/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf", 0),
     ("/usr/share/fonts/liberation-sans-fonts/LiberationSans-Bold.ttf", 0),
 ];
+/// Noto Sans JP (subset OTF, SIL OFL 1.1; see ATTRIBUTION.md), bundled so Japanese draws the same
+/// on every platform, the web build included. It is appended after every family, ahead of Hangul,
+/// so kanji take Japanese shapes rather than Korean ones.
+const NOTO_SANS_JP: &[u8] = include_bytes!("../../../assets/fonts/NotoSansJP-Regular.otf");
 /// Hangul fallback, appended after every family so Korean session, track and clip names draw
 /// whatever the interface language. The Noto Sans CJK collection's face 1 is its Korean face.
 const HANGUL: &[(&str, u32)] = &[
@@ -125,6 +129,10 @@ pub fn definitions() -> FontDefinitions {
         bold_family.insert(0, "system-regular".into());
     }
     fonts.families.insert(FontFamily::Name("bold".into()), bold_family);
+    fonts.font_data.insert("noto-sans-jp".into(), Arc::new(FontData::from_static(NOTO_SANS_JP)));
+    for family in fonts.families.values_mut() {
+        family.insert(1.min(family.len()), "noto-sans-jp".into());
+    }
     if let Some(h) = load(HANGUL, "sans-serif:lang=ko", Some("ko")) {
         fonts.font_data.insert("system-hangul".into(), Arc::new(h));
         for family in fonts.families.values_mut() {

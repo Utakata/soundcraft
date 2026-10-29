@@ -1,0 +1,222 @@
+# Japanese text for the engine's user-facing error messages (shown in the status line). Format: English<TAB>日本語
+Grid mode always snaps	区切りモードでは常に区切りに吸着します
+Shuffle is locked	詰め移動はロックされています
+a group needs at least one track	グループには1つ以上のトラックが必要です
+all insert slots are in use	インサートの空きがありません
+all send slots are in use	センドの空きがありません
+analyse at most 20 minutes at a time	一度に解析できるのは20分までです
+audio files go on audio tracks	オーディオファイルはオーディオトラックに置いてください
+leave Shuffle mode before locking it	ロックする前に詰め移動モードを終了してください
+make a timeline selection first	先にタイムライン上で範囲を選択してください
+no MIDI or instrument tracks to notate	楽譜にできるMIDIトラックまたはインストゥルメントトラックがありません
+no clips selected	クリップが選択されていません
+no markers on the clipboard (copy a range that contains markers)	クリップボードにマーカーがありません。マーカーを含む範囲をコピーしてください
+designate a target playlist first (Track › Designate as Target Playlist)	先に対象プレイリストを指定してください（トラック › 対象プレイリストに指定）
+not a MIDI clip	MIDIクリップではありません
+nothing to import	読み込むものがありません
+only instrument tracks have a sampler	サンプラーを持つのはインストゥルメントトラックだけです
+record-enable (or pass) the audio tracks to prepare	準備するオーディオトラックを録音待機にしてください
+saving files is not available in this build	このバージョンではファイルを保存できません
+select MIDI clips	MIDIクリップを選択してください
+select a MIDI or instrument track	MIDIトラックまたはインストゥルメントトラックを選択してください
+select a VCA master	VCAマスターを選択してください
+select a clip	クリップを選択してください
+select a range on the timeline	タイムライン上で範囲を選択してください
+select a range to analyse	解析する範囲を選択してください
+select an audio clip	オーディオクリップを選択してください
+select an audio track to generate on	生成先のオーディオトラックを選択してください
+select audio clips first	先にオーディオクリップを選択してください
+select audio on an audio track	オーディオトラック上のオーディオを選択してください
+select one or more aux input tracks	AUX入力トラックを1つ以上選択してください
+select some audio first	先にオーディオを選択してください
+select two or more clips	2つ以上のクリップを選択してください
+selection is empty	選択範囲が空です
+the selection is empty	選択範囲が空です
+the Video track has no clips	ビデオトラックにクリップがありません
+the clip has no clip effects	このクリップにはクリップエフェクトがありません
+the clip is locked	クリップがロックされています
+the clip's audio is not loaded	クリップのオーディオが読み込まれていません
+the clips can't land there: past the last track, or on a track that can't hold them	その位置には配置できません。最後のトラックを超えるか、クリップを置けないトラックです
+the sampler is not available	サンプラーを利用できません
+the selection is not a looped clip	選択内容はループクリップではありません
+the selection is too short	選択範囲が短すぎます
+the selection must cover a clip start, end or the boundary between two clips	選択範囲にクリップの先頭、末尾、または2つのクリップの境目を含めてください
+the session has no Video track	セッションにビデオトラックがありません
+the target playlist is the main playlist	対象プレイリストはメインプレイリストです
+the track has no instrument	トラックにインストゥルメントがありません
+the track has no playlist	トラックにプレイリストがありません
+the track's instrument is not the sampler	トラックのインストゥルメントはサンプラーではありません
+there is no audio to prepare	準備するオーディオがありません
+too many tempo events: use a coarser resolution	テンポイベントが多すぎます。もっと粗い分解能にしてください
+that playlist is already active	そのプレイリストはすでに使用中です
+nothing to move into that folder	そのフォルダーに移動するものがありません
+no such clip, or it is edit-locked	クリップがないか、編集ロックされています
+clip has no length	クリップの長さがありません
+use F+FF, e.g. 12+08	F+FF の形式で入力してください（例 12+08）
+feet must be 0.. and frames 0..15	フィートは0以上、フレームは0〜15で入力してください
+not opened: the path is not absolute	開けません。絶対パスではありません
+bundle: no .scraft session inside	バンドル内に .scraft セッションがありません
+bundle: too large	バンドルが大きすぎます
+bundle: too many files	バンドル内のファイルが多すぎます
+internal error (see the log)	内部エラーが発生しました（ログを確認してください）
+no clips to export	書き出すクリップがありません
+not a SoundCraft clip group file	SoundCraftのクリップグループファイルではありません
+not enough room before a locked clip	ロックされたクリップの手前に十分な余白がありません
+can't make room inside a crossfade	クロスフェードの内側には余白を作れません
+too large to load	大きすぎて読み込めません
+# Fixed reasons, parameter checks and templates ({} stands for a name, number or path).
+the autosave thread stopped	自動保存の処理が停止しました
+no track	トラックがありません
+no such track	そのトラックはありません
+no such clip	そのクリップはありません
+no such audio file	そのオーディオファイルはありません
+no such playlist	そのプレイリストはありません
+empty slot	スロットが空です
+empty send slot	センドのスロットが空です
+unknown plugin	不明なプラグインです
+unknown tool	不明なツールです
+unknown mode	不明なモードです
+unknown fade shape	不明なフェードの形です
+unknown height	不明なトラックの高さです
+unknown format	不明な形式です
+unknown grid value	不明な区切りの値です
+unknown nudge value	不明なナッジの値です
+unknown ruler	不明なルーラーです
+unknown frame rate	不明なフレームレートです
+unknown `group`	不明な `group` です
+no clips	クリップがありません
+clip not found	クリップが見つかりません
+only instrument tracks have an instrument	インストゥルメントを持つのはインストゥルメントトラックだけです
+not a MIDI or instrument track	MIDIトラックまたはインストゥルメントトラックではありません
+none of the requested tracks hold MIDI	指定したトラックにMIDIがありません
+bounces are limited to 4 hours	バウンスは4時間までです
+clip group file has too many clips	クリップグループファイルのクリップが多すぎます
+bad feet	フィートの値が正しくありません
+bad frames	フレームの値が正しくありません
+mode must be shuffle|slip|spot|grid|relative_grid	mode には shuffle・slip・spot・grid・relative_grid のいずれかを指定してください
+curvature must be a finite number from -1 to 1	curvature には -1 から 1 までの数値を指定してください
+clip fades cannot also specify tracks or an edit range	クリップのフェードでは、トラックや編集範囲を同時に指定できません
+clip must be an id	clip にはIDを指定してください
+side must be in or out	side には in または out を指定してください
+length must be a positive sample count	length には1以上のサンプル数を指定してください
+shape must be a fade shape name	shape にはフェードの形の名前を指定してください
+curvature requires a clip and side	curvature を使うには clip と side の指定が必要です
+source_bpm must be 5..1000	source_bpm には5〜1000の値を指定してください
+index out of range	index が範囲外です
+factor must be a positive number	factor には正の数を指定してください
+bit_depth must be 16, 24 or 32f	bit_depth には 16、24、32f のいずれかを指定してください
+slot out of range	slot が範囲外です
+each note needs `start` or `start_ticks`	各ノートには `start` または `start_ticks` が必要です
+unknown memory location (give `number`, `id` or `name`)	不明なメモリーロケーションです（`number`、`id`、`name` のいずれかを指定してください）
+no tracks: pass `track`/`tracks` or select tracks	トラックがありません。`track`/`tracks` を指定するか、トラックを選択してください
+nothing to clear: pass `clips` or `sources`, or select them in the Clip List	消去するものがありません。`clips` か `sources` を指定するか、クリップリストで選択してください
+pass `start` and/or `end`	`start` と `end` の一方または両方を指定してください
+give `start` and `length` or `end`	`start` と、`length` または `end` を指定してください
+give `factor` (0.05..20) or a new `length`	`factor`（0.05〜20）または新しい `length` を指定してください
+give `start` and `end`	`start` と `end` を指定してください
+`bars`/`beats` must describe a positive length	`bars`/`beats` には正の長さを指定してください
+`name` must not be empty	`name` は空にできません
+`vca` must be a VCA Master track	`vca` にはVCAマスタートラックを指定してください
+`playlist` index required	`playlist` の番号を指定してください
+`folder` is not a folder track	`folder` はフォルダートラックではありません
+`track` is not a MIDI or instrument track	`track` はMIDIトラックでもインストゥルメントトラックでもありません
+`new_tracks: false` needs `track` or a selected audio track	`new_tracks: false` には `track` の指定か、選択されたオーディオトラックが必要です
+no path yet: pass `path` (Save As)	保存先がまだありません。`path` を指定してください（別名で保存）
+`timecode` required (HH:MM:SS:FF)	`timecode` を指定してください（HH:MM:SS:FF）
+`feet_frames` required (F+FF)	`feet_frames` を指定してください（F+FF）
+`color` components must be integers 0..=255	`color` の各成分は0〜255の整数にしてください
+`color` must be [r,g,b] or null	`color` は [r,g,b] または null で指定してください
+`color` must be [r,g,b] or a palette index	`color` は [r,g,b] またはパレット番号で指定してください
+`slot` must be a number or a letter	`slot` には数字または文字を指定してください
+`state` is not valid base64 (or is too large)	`state` が正しい base64 ではないか、大きすぎます
+`state` must be a base64 string or null	`state` は base64 の文字列または null で指定してください
+`params` must be an object of numbers	`params` には数値のオブジェクトを指定してください
+`tracks` must be an array of track ids or names	`tracks` にはトラックIDまたはトラック名の配列を指定してください
+`from` slot	`from` のスロットを指定してください
+`to` slot	`to` のスロットを指定してください
+`{}` required	`{}` を指定してください
+`{}` is required	`{}` を指定してください
+`{}` id required	`{}` のIDを指定してください
+`{}` must be a number	`{}` には数値を指定してください
+`{}` must be an object	`{}` にはオブジェクトを指定してください
+`{}` must be an array of ids	`{}` にはIDの配列を指定してください
+`{}` must be a track id or name	`{}` にはトラックIDまたはトラック名を指定してください
+`{}` must be samples, {seconds}, or a time string	`{}` にはサンプル数、{seconds}（秒）、または時刻の文字列を指定してください
+`{}` must be 0..{} or a..{}	`{}` は 0〜{}、または a〜{} で指定してください
+unknown process `{}`	不明な処理 `{}` です
+unknown mode `{}`	不明なモード `{}` です
+unknown action `{}`	不明な操作 `{}` です
+unknown automation param `{}`	不明なオートメーションパラメーター `{}` です
+unknown kind `{}`	不明な種類 `{}` です
+unknown format `{}`	不明な形式 `{}` です
+unknown view `{}`	不明な表示 `{}` です
+unknown focus `{}`	不明なフォーカス `{}` です
+unknown plugin `{}`	不明なプラグイン `{}` です
+unknown bus `{}`	不明なバス `{}` です
+unknown track {}	不明なトラック {} です
+unknown field `{}`: an instrument's parameters go in `params` ({id: value}), or one at a time in mix.instrument_param	不明なフィールド `{}` です。インストゥルメントのパラメーターは `params` ({id: value}) でまとめて指定するか、mix.instrument_param で1つずつ指定してください
+unknown fold_down `{}` (use "stereo")	不明な fold_down `{}` です（"stereo" を指定してください）
+cannot create `{}`	`{}` を作成できません
+no clip with id {}	ID {} のクリップはありません
+no audio file with id {}	ID {} のオーディオファイルはありません
+no track with id {}	ID {} のトラックはありません
+no track named `{}`	`{}` という名前のトラックはありません
+no bus `{}`	バス `{}` はありません
+no output `{}`	出力 `{}` はありません
+a bus named `{}` exists	`{}` という名前のバスがすでにあります
+an output named `{}` exists	`{}` という名前の出力がすでにあります
+a group named `{}` already exists	`{}` という名前のグループがすでにあります
+a track named `{}` already exists	`{}` という名前のトラックがすでにあります
+`{}` has no parameter `{}`	`{}` にはパラメーター `{}` がありません
+the sampler has no parameter `{}`	サンプラーにパラメーター `{}` はありません
+`{}` has no parameter(s): {}	`{}` に次のパラメーターはありません: {}
+parameter(s) need a numeric value: {}	次のパラメーターには数値が必要です: {}
+`{}` is not an instrument	`{}` はインストゥルメントではありません
+`{}` is not a built-in instrument	`{}` は内蔵のインストゥルメントではありません
+`{}` is not a Video track	`{}` はビデオトラックではありません
+`{}` has no track named `{}`	`{}` に `{}` という名前のトラックはありません
+cannot parse position `{}`	位置 `{}` を読み取れません
+{} already exists: pass `replace: true` to replace it	{} はすでにあります。置き換えるには `replace: true` を指定してください
+cannot write `{}` files (supported: {})	`{}` ファイルは書き出せません（対応形式: {}）
+the main output must have 2 to 16 channels (`{}` has {})	メイン出力のチャンネル数は2〜16にしてください（`{}` は{}チャンネルです）
+the target length must be between 1 sample and {} s	目標の長さは1サンプルから{}秒の間にしてください
+stretch ratio {} is outside 0.1..10	ストレッチ比 {} は 0.1〜10 の範囲外です
+selection is too long to consolidate on `{}` (at most {} s)	選択範囲が長すぎて `{}` では統合できません（最大{}秒）
+`{}` is too long to process (at most {} s)	`{}` は長すぎて処理できません（最大{}秒）
+`{}` is too long to generate on (at most {} s)	選択範囲が長すぎて `{}` に生成できません（最大{}秒）
+`{}` is too long to export (at most {} s)	`{}` は長すぎて書き出せません（最大{}秒）
+`{}` is too long to render (at most {} s)	`{}` は長すぎてレンダリングできません（最大{}秒）
+`{}` is too long to commit (at most {} s)	`{}` は長すぎて確定できません（最大{}秒）
+`{}` has more than a day of clips to scan	`{}` のクリップが1日分を超えていて、調べられません
+not a clip group file: {}	クリップグループファイルではありません: {}
+audio path escapes the group folder: {}	オーディオのパスがグループのフォルダーの外に出ています: {}
+`{}` is used by {} clips on the timeline; pass `with_clips: true` to remove them too	`{}` はタイムライン上の{}個のクリップで使われています。まとめて削除するには `with_clips: true` を指定してください
+`{}` is used by 1 clip on the timeline; pass `with_clips: true` to remove them too	`{}` はタイムライン上の1個のクリップで使われています。まとめて削除するには `with_clips: true` を指定してください
+the autosave thread stopped: {}	自動保存の処理が停止しました: {}
+{}: not a regular file	{}: 通常のファイルではありません
+{}: not a SoundCraft session	{}: SoundCraftのセッションではありません
+{}: no audio	{}: オーディオがありません
+{}: file is too large to import	{}: ファイルが大きすぎて読み込めません
+{}: too large to import	{}: 大きすぎて読み込めません
+{}: too long for a sample (ten minutes of 192 kHz stereo at most)	{}: サンプルには長すぎます（192 kHzステレオで最長10分）
+{}: too many files named {}	{}: 「{}」という名前のファイルが多すぎます
+{}: no free file name for {}	{}: {} に使える空きファイル名がありません
+{}: imported the audio; no picture ({})	{}: オーディオを読み込みました。映像はありません（{}）
+{}: {} pictures cannot be shown yet; the Video track shows the clip only	{}: {} の映像はまだ表示できません。ビデオトラックにはクリップだけが表示されます
+{}: no usable audio stream ({})	{}: 使えるオーディオストリームがありません（{}）
+{}: {}; no usable audio stream ({})	{}: {}。使えるオーディオストリームもありません（{}）
+missing media: {}	見つからないメディア: {}
+MIDI file: more than {} meter changes	MIDIファイル: 拍子の変更が{}回を超えています
+MIDI track {}: longer than 24 hours	MIDIトラック{}: 24時間を超えています
+bundle: {} is not text	バンドル: {} はテキストではありません
+not opened: {}	開けません: {}
+automation filesystem access is not granted: read authority is absent: {}	オートメーションからのファイルアクセスは許可されていません（読み取り権限がありません）: {}
+automation filesystem access is not granted: write authority is absent: {}	オートメーションからのファイルアクセスは許可されていません（書き込み権限がありません）: {}
+automation path rejected: outside the read root {}: {}	オートメーションのパスは使えません。読み取り用フォルダー {} の外です: {}
+automation path rejected: outside the write root {}: {}	オートメーションのパスは使えません。書き込み用フォルダー {} の外です: {}
+automation path rejected: path is empty	オートメーションのパスは使えません。パスが空です
+automation path rejected: reserved device names are not allowed: {}	オートメーションのパスは使えません。予約されたデバイス名は使えません: {}
+automation path rejected: a link that leads nowhere: {}	オートメーションのパスは使えません。リンク先がありません: {}
+automation path rejected: cannot resolve {}: {}	オートメーションのパスは使えません。{} を解決できません: {}
+automation path rejected: parent traversal below a folder that doesn't exist: {}	オートメーションのパスは使えません。存在しないフォルダーの下で親フォルダーをたどっています: {}
+cannot open the automation {} root `{}`: {}	オートメーションのルートフォルダーを開けません（種類: {}、場所: `{}`）: {}

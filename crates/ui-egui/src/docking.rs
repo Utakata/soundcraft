@@ -31,12 +31,12 @@ impl Panel {
     }
     fn label(self) -> &'static str {
         match self {
-            Self::Canvas => "Session",
-            Self::Tracks => "Tracks and Groups",
-            Self::Clips => "Clips",
-            Self::Midi => "MIDI Editor",
-            Self::Memory => "Memory Locations",
-            Self::History => "Undo History",
+            Self::Canvas => crate::i18n::tr("Session"),
+            Self::Tracks => crate::i18n::tr("Tracks and Groups"),
+            Self::Clips => crate::i18n::tr("Clips"),
+            Self::Midi => crate::i18n::tr("MIDI Editor"),
+            Self::Memory => crate::i18n::tr("Memory Locations"),
+            Self::History => crate::i18n::tr("Undo History"),
         }
     }
     fn default_side(self) -> Zone {
@@ -391,7 +391,7 @@ pub fn show(app: &mut crate::SoundApp, ui: &mut egui::Ui, window: crate::MainWin
     let mut workspace = if edit { std::mem::take(&mut app.ui.docking) } else { std::mem::replace(&mut app.ui.mix_docking, mix_default()) };
     let before_sync = workspace.clone();
     if let Err(error) = (if edit { workspace.validate() } else { workspace.validate_mix() }).and_then(|()| sync(&mut workspace, app, edit)) {
-        app.ui.status = format!("Panel layout could not be restored: {error}");
+        app.ui.status = crate::i18n::trf("Panel layout could not be restored: {}", &[&error.to_string()]);
         workspace = if edit { Workspace::default() } else { mix_default() };
         let _ = sync(&mut workspace, app, edit);
     }
@@ -441,7 +441,7 @@ pub fn show(app: &mut crate::SoundApp, ui: &mut egui::Ui, window: crate::MainWin
             .map_err(|error| error.to_string())
             .and_then(|action| command_for(app, false, &json!({"action": action}), edit))
         {
-            app.ui.status = format!("Panel move was not applied: {error}");
+            app.ui.status = crate::i18n::trf("Panel move was not applied: {}", &[&error.to_string()]);
         }
     }
 }

@@ -1,0 +1,170 @@
+# Japanese labels in the windows, dialogs and panels: buttons, headings, tooltips and fixed status text. Format: English<TAB>日本語
+A bounce is already running	バウンスはすでに実行中です
+Active audio end time is unknown (invalid session sample rate)	オーディオの終了時間が不明です（セッションのサンプルレートが無効）
+Active audio ends at {} seconds	オーディオは {} 秒で終了します
+Active plugin instances: {}	動作中のプラグイン: {}
+Add	追加
+All audio clips have loaded media within source bounds.	すべてのオーディオクリップのメディアが読み込まれ、ソースの範囲内です。
+Analyses the edit selection on the selected tracks.	選択したトラックの編集選択範囲を解析します。
+Analyze	解析
+Applies across the edit selection (constant: at the insertion point; scale: factor = end / start; stretch: factor = start / end).	編集選択範囲全体に適用します（constant: 挿入位置、scale: 係数 = 終了 / 開始、stretch: 係数 = 開始 / 終了）。
+Applies to the selected MIDI clips (or those under the selection).	選択した MIDI クリップ（または選択範囲内のクリップ）に適用します。
+Apply	適用
+Apply to selected tracks (Shift: selected clips)	選択したトラックに適用（Shift: 選択したクリップ）
+Audio system	オーディオシステム
+Audio: {}	オーディオ: {}
+Bounce cancelled	バウンスをキャンセルしました
+Bounced {} (peak {} dBFS, {} LUFS)	{} をバウンスしました（ピーク {} dBFS、{} LUFS）
+Bouncing {}	{} をバウンス中
+Bouncing {} ({}%)	{} をバウンス中（{}%）
+Buffer size	バッファーサイズ
+Busses	バス
+Cancel	キャンセル
+Checks loaded media only, not files on disk, signal levels, plugins or routing.	読み込み済みのメディアのみを確認します。ディスク上のファイル、信号レベル、プラグイン、ルーティングは対象外です。
+Clear Recent	最近使った項目を消去
+Click keys to step-enter notes into the selected MIDI clip at the insertion point.	鍵盤をクリックすると、選択した MIDI クリップの挿入位置にノートをステップ入力します。
+Click to add a MIDI clip to {} at the insertion point.	クリックすると、{} の挿入位置に MIDI クリップを追加します。
+Clip effects gain (dB)	クリップエフェクトのゲイン (dB)
+Commands Keyboard Focus (single-key editing)	コマンド用キーボードフォーカス（1キー操作での編集）
+Could not open {}: {}	{} を開けませんでした: {}
+Count Off	カウントイン
+Curve	カーブ
+Default ({})	デフォルト（{}）
+Delay (ticks)	遅れ（ティック）
+Delay compensation	遅延補正
+Device default	デバイスのデフォルト
+Discard	破棄
+Double-click to import audio/MIDI at the insertion point or open a session.	ダブルクリックすると、挿入位置にオーディオ/MIDI を読み込むか、セッションを開きます。
+Drag to change the tempo (Shift: fine steps), or click to type it	ドラッグでテンポを変更（Shift: 細かい刻み）、クリックで数値入力
+Drop an audio file here	ここにオーディオファイルをドロップ
+Drop an audio file on this window	このウィンドウにオーディオファイルをドロップ
+Duration	長さ
+Duration %	長さ %
+Enabled parameters	有効なパラメーター
+Fill window with session (Alt+A)	セッション全体をウィンドウに合わせる (Alt+A)
+Finish or cancel the bounce first	先にバウンスを完了またはキャンセルしてください
+Grab bag	その他
+Grid	区切り
+Grid mode ({}; again for Relative); Shift-click: Snap to Grid in the other modes	区切りモード（{}、もう一度押すと相対）。Shift クリック: 他のモードで「区切りに吸着」
+Identify Beat: selection is	ビートを指定: 選択範囲は
+Includes alternate takes and muted clips. Refresh after editing.	別テイクとミュートされたクリップを含みます。編集後は更新してください。
+Input	入力
+Input device	入力デバイス
+Legato	レガート
+Load Sample…	サンプルを読み込む…
+Loop Playback (Cmd+Shift+L)	ループ再生 (Cmd+Shift+L)
+MIDI EDITOR	MIDI エディター
+Main output	メイン出力
+New Bus	新規バス
+New Configuration…	新規構成…
+No Recent Sessions	最近使ったセッションはありません
+No Video track — File › Import › Video…	ビデオトラックがありません — ファイル › 読み込み › ビデオ…
+No background tasks are running.	実行中のバックグラウンドタスクはありません。
+No contributor data was built into this copy.	このビルドには貢献者データが含まれていません。
+No model credits were built into this copy.	このビルドにはモデルのクレジットが含まれていません。
+No sample	サンプルなし
+Non-destructive, applied at playback to the selected MIDI tracks.	元のデータは変更せず、再生時に選択した MIDI トラックへ適用します。
+Notation view of the MIDI clip; edit notes in the MIDI Editor or Event List.	MIDI クリップの楽譜表示です。ノートの編集は MIDI エディターまたはイベントリストで行います。
+Nudge	微調整
+Open Recent	最近使った項目を開く
+Operation	操作
+Output	出力
+Output device	出力デバイス
+Outputs	出力
+Parent folder	親フォルダー
+Play (Space)	再生 (Space)
+Quantize	クオンタイズ
+Quantize to the grid	区切りにクオンタイズ
+Reconnect audio device	オーディオデバイスを再接続
+Record (Cmd+Space)	録音 (Cmd+Space)
+Recording at 24-bit uses {} MB per mono track-minute	24ビットで録音すると、モノラルトラック1本につき1分あたり {} MB 使用します
+Recover	復元
+Recover Unsaved Work	未保存の作業を復元
+Refresh Report	レポートを更新
+Refresh devices	デバイスを更新
+Renders and AudioSuite processes run to completion before returning.	レンダリングやオフライン処理は、完了を待ってから次に進みます。
+Reopen the audio devices with these settings	この設定でオーディオデバイスを開き直す
+Reverse the order	順序を逆にする
+Revert	保存した状態に戻す
+Sample rate	サンプルレート
+Search commands…	コマンドを検索…
+Select a MIDI clip (or a MIDI track) to edit its notes.	ノートを編集するには MIDI クリップ（または MIDI トラック）を選択してください。
+Select a MIDI clip or MIDI track.	MIDI クリップまたは MIDI トラックを選択してください。
+Select a MIDI clip.	MIDI クリップを選択してください。
+Select an audio clip.	オーディオクリップを選択してください。
+Semitones	半音
+Sensitivity	感度
+Separate clips at detected beats	検出したビートでクリップを分割
+Session comments	セッションのコメント
+Session file: {}	セッションファイル: {}
+Session media: {} files, {} MB in memory (32-bit float)	セッションのメディア: {} ファイル、メモリ上 {} MB（32ビット浮動小数点）
+Session rate	セッションのレート
+Set Tempo	テンポを設定
+Set the session tempo from the beats	ビートからセッションのテンポを設定
+Show	表示
+Show grid lines	区切り線を表示
+Shuffle is locked ({}-click to unlock)	詰め移動はロックされています（{} クリックで解除）
+Shuffle mode ({}); {}-click locks it out	詰め移動モード（{}）。{} クリックでロック
+Smart Tool (F6+F7 / F7+F8)	スマートツール (F6+F7 / F7+F8)
+Sort	並べ替え
+Spot to where it was recorded	録音された位置に配置
+Stop (Space)	停止 (Space)
+Stop recording first	先に録音を停止してください
+Strength %	強さ %
+Sub	サブ
+Swing %	スイング %
+Table	テーブル
+The mix runs in 512-sample blocks; the buffer size sets the device's own latency.	ミックスは 512 サンプルずつのブロックで処理されます。バッファーサイズで、デバイス側の遅延が決まります。
+Time Scale	タイムスケール
+Timecode burn-in	タイムコードの焼き込み
+Track tint in the Edit window	編集ウィンドウでのトラックの色付け
+Tracks: {}	トラック: {}
+Transpose	移調
+UI frame time: {} ms	UI フレーム時間: {} ms
+Undo steps: {}	取り消せる回数: {}
+Use	使用
+Uses the edit selection.	編集選択範囲を使用します。
+Vel +10	ベロシティ +10
+Vel −10	ベロシティ −10
+Velocity	ベロシティ
+Velocity +	ベロシティ +
+Video Track Offline	ビデオトラックがオフラインです
+Waveform zoom in (Cmd+Alt+])	波形をズームイン (Cmd+Alt+])
+Window configuration could not be restored: {}	ウィンドウ構成を復元できませんでした: {}
+Workspace	ワークスペース
+Write automation for the selected tracks:	選択したトラックのオートメーションを書き込み:
+Write to Notes	ノートに書き込む
+Zoom Toggle (E)	ズーム切り替え (E)
+Zoom in (Cmd+])	ズームイン (Cmd+])
+Zoom out (Cmd+[)	ズームアウト (Cmd+[)
+Zoom preset (click to recall, Cmd-click to store)	ズームプリセット（クリックで呼び出し、Cmd クリックで保存）
+alternate playlist	別プレイリスト
+bar(s)	小節
+default buffer	デフォルトのバッファー
+end bpm	終了 bpm
+less than a minute ago	1分以内
+mono	モノラル
+no device (silent clock)	デバイスなし（無音クロック）
+no engine	エンジンなし
+not found	見つかりません
+opened on first record or monitor	最初の録音またはモニター時に開きます
+opening…	開いています…
+recently	最近
+resampled to the device rate	デバイスのレートにリサンプリング
+start bpm	開始 bpm
+stereo	ステレオ
+{}  (missing)	{}  （見つかりません）
+{} audio clips checked · {} issues	{} 個のオーディオクリップを確認 · {} 件の問題
+{} bars	{} 小節
+{} contributors · {} commits	{} 人の貢献者 · {} コミット
+{} days ago	{} 日前
+{} hours ago	{} 時間前
+{} loaded into the sampler	{} をサンプラーに読み込みました
+{} minutes ago	{} 分前
+{} mode ({}); Shift-click adds Snap to Grid	{} モード（{}）。Shift クリックで「区切りに吸着」を追加
+{} samples	{} サンプル
+{} · {} notes · {} selected · Pencil: add · drag: move/select · arrows: move · Delete: remove	{} · {} ノート · {} 選択中 · ペンシルツール: 追加 · ドラッグ: 移動/選択 · 矢印: 移動 · Delete: 削除
+{} — {} from channel {}	{} — {}（チャンネル {} から）
+{}: missing	{}: 見つかりません
+“{}” has unsaved changes and an unfinished recording from an earlier run, autosaved {}.	「{}」には前回の実行からの未保存の変更と未完了の録音があり、{} に自動保存されました。
+“{}” has unsaved changes from an earlier run, autosaved {}.	「{}」には前回の実行からの未保存の変更があり、{} に自動保存されました。

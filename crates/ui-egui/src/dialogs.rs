@@ -1,6 +1,7 @@
 //! Modal dialogs opened by menu-style invocations.
 
 use crate::SoundApp;
+use crate::i18n;
 use crate::theme::{Tokens, bold};
 use egui::{Align2, vec2};
 use serde_json::{Value, json};
@@ -214,8 +215,8 @@ fn open_pending_session(app: &mut SoundApp) {
     }
     let _ = app.run("transport.stop", json!({}));
     app.ui.status = match soundcraft_engine::io::open_session_bytes(&mut app.engine, &name, &bytes) {
-        Ok(missing) if missing.is_empty() => format!("Opened {name}"),
-        Ok(missing) => format!("Opened {name} ({} missing media)", missing.len()),
+        Ok(missing) if missing.is_empty() => i18n::trf("Opened {}", &[&name]),
+        Ok(missing) => i18n::trf("Opened {} ({} missing media)", &[&name, &missing.len().to_string()]),
         Err(e) => e.to_string(),
     };
 }
@@ -335,7 +336,8 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
     .to_string();
     let enter = ctx.input(|i| i.key_pressed(egui::Key::Enter));
     let esc = ctx.input(|i| i.key_pressed(egui::Key::Escape));
-    egui::Window::new(egui::RichText::new(&title).font(bold(13.0)))
+    egui::Window::new(egui::RichText::new(i18n::tr(&title)).font(bold(13.0)))
+        .id(egui::Id::new(&title))
         .collapsible(false)
         .resizable(false)
         .anchor(Align2::CENTER_CENTER, vec2(0.0, -80.0))
@@ -344,9 +346,9 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
             match &mut d {
                 Dialog::NewTracks { count, format, kind, timebase, name } => {
                     ui.horizontal(|ui| {
-                        ui.label("Create");
+                        ui.label(i18n::tr("Create"));
                         ui.add(egui::DragValue::new(count).range(1..=128));
-                        ui.label("new");
+                        ui.label(i18n::tr("new"));
                         egui::ComboBox::from_id_salt("nt_fmt").selected_text(format.as_str()).show_ui(ui, |ui| {
                             for f in soundcraft_model::ChannelFormat::ALL {
                                 ui.selectable_value(format, f.label().to_string(), f.label());
@@ -362,15 +364,15 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
                                     }
                                 }
                             });
-                        ui.label("in");
-                        egui::ComboBox::from_id_salt("nt_tb").selected_text(if timebase == "ticks" { "Ticks" } else { "Samples" }).show_ui(
+                        ui.label(i18n::tr("in"));
+                        egui::ComboBox::from_id_salt("nt_tb").selected_text(i18n::tr(if timebase == "ticks" { "Ticks" } else { "Samples" })).show_ui(
                             ui,
                             |ui| {
                                 ui.selectable_value(timebase, "samples".to_string(), "Samples");
                                 ui.selectable_value(timebase, "ticks".to_string(), "Ticks");
                             },
                         );
-                        ui.label("Name:");
+                        ui.label(i18n::tr("Name:"));
                         ui.add(egui::TextEdit::singleline(name).desired_width(140.0));
                     });
                     if buttons(ui, "Create", enter) {
@@ -380,15 +382,15 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
                 }
                 Dialog::NewSession { name, sample_rate, demo } => {
                     ui.horizontal(|ui| {
-                        ui.label("Name");
+                        ui.label(i18n::tr("Name"));
                         ui.text_edit_singleline(name);
                     });
-                    egui::ComboBox::from_label("Sample Rate").selected_text(format!("{sample_rate} Hz")).show_ui(ui, |ui| {
+                    egui::ComboBox::from_label(i18n::tr("Sample Rate")).selected_text(format!("{sample_rate} Hz")).show_ui(ui, |ui| {
                         for r in soundcraft_time::SampleRate::COMMON {
                             ui.selectable_value(sample_rate, r, format!("{r} Hz"));
                         }
                     });
-                    crate::widgets::checkbox(ui, demo, "Start from the demo session");
+                    crate::widgets::checkbox(ui, demo, i18n::tr("Start from the demo session"));
                     if buttons(ui, "Create", enter) {
                         action = Some((
                             "session.new".into(),
@@ -398,10 +400,10 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
                 }
                 Dialog::Bounce { path, format, bit_depth, normalize } => {
                     ui.horizontal(|ui| {
-                        ui.label("File");
+                        ui.label(i18n::tr("File"));
                         ui.add(egui::TextEdit::singleline(path).desired_width(420.0));
                         if let Some(pick) = &app.services.pick_save
-                            && ui.button("Browse…").clicked()
+                            && ui.button(i18n::tr("Browse…")).clicked()
                             && let Some(p) = pick("file.bounce_mix", path)
                         {
                             *path = p;
@@ -414,20 +416,20 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
                         }
                     });
                     ui.horizontal(|ui| {
-                        egui::ComboBox::from_label("Format").selected_text(format.to_uppercase()).show_ui(ui, |ui| {
+                        egui::ComboBox::from_label(i18n::tr("Format")).selected_text(format.to_uppercase()).show_ui(ui, |ui| {
                             for f in ["wav", "aiff", "flac"] {
                                 ui.selectable_value(format, f.to_string(), f.to_uppercase());
                             }
                         });
-                        egui::ComboBox::from_label("Bit Depth").selected_text(format!("{bit_depth}-bit")).show_ui(ui, |ui| {
+                        egui::ComboBox::from_label(i18n::tr("Bit Depth")).selected_text(format!("{bit_depth}-bit")).show_ui(ui, |ui| {
                             for b in ["16", "24", "32f"] {
                                 ui.selectable_value(bit_depth, b.to_string(), format!("{b}-bit"));
                             }
                         });
                     });
-                    crate::widgets::checkbox(ui, normalize, "Normalize to -0.1 dBFS");
+                    crate::widgets::checkbox(ui, normalize, i18n::tr("Normalize to -0.1 dBFS"));
                     ui.label(
-                        egui::RichText::new("Bounces the edit selection, or the whole session when nothing is selected.")
+                        egui::RichText::new(i18n::tr("Bounces the edit selection, or the whole session when nothing is selected."))
                             .small()
                             .color(Tokens::current().text_dim),
                     );
@@ -471,21 +473,21 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
                         && cmd != "session.save_as"
                         && cmd != "session.save_copy"
                         && key != "dir"
-                        && ui.button("Browse…").clicked()
+                        && ui.button(i18n::tr("Browse…")).clicked()
                         && let Some(p) = pick(cmd, &[])
                     {
                         *path = p;
                     }
                     if let Some(pick) = &app.services.pick_folder
                         && key == "dir"
-                        && ui.button("Browse…").clicked()
+                        && ui.button(i18n::tr("Browse…")).clicked()
                         && let Some(p) = pick(path)
                     {
                         *path = p;
                     }
                     if let Some(pick) = &app.services.pick_save
                         && (cmd == "session.save_as" || cmd == "session.save_copy")
-                        && ui.button("Browse…").clicked()
+                        && ui.button(i18n::tr("Browse…")).clicked()
                         && let Some(p) = pick(cmd, path)
                     {
                         *path = p;
@@ -518,7 +520,7 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
                     ui.horizontal(|ui| {
                         // Same limits the engine enforces (time crate `valid_bpm`).
                         ui.add(egui::DragValue::new(bpm).speed(0.1).range(5.0..=1000.0));
-                        ui.label("bpm");
+                        ui.label(i18n::tr("bpm"));
                     });
                     if buttons(ui, "OK", enter) {
                         action = Some(tempo_change_action(*at, *bpm));
@@ -540,10 +542,10 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
                     }
                 }
                 Dialog::StripSilence { threshold, min_ms, pre_ms, post_ms } => {
-                    ui.add(egui::Slider::new(threshold, -96.0..=0.0).text("Threshold dB"));
-                    ui.add(egui::Slider::new(min_ms, 0.0..=2000.0).text("Min strip duration ms"));
-                    ui.add(egui::Slider::new(pre_ms, 0.0..=500.0).text("Clip start pad ms"));
-                    ui.add(egui::Slider::new(post_ms, 0.0..=2000.0).text("Clip end pad ms"));
+                    ui.add(egui::Slider::new(threshold, -96.0..=0.0).text(i18n::tr("Threshold dB")));
+                    ui.add(egui::Slider::new(min_ms, 0.0..=2000.0).text(i18n::tr("Min strip duration ms")));
+                    ui.add(egui::Slider::new(pre_ms, 0.0..=500.0).text(i18n::tr("Clip start pad ms")));
+                    ui.add(egui::Slider::new(post_ms, 0.0..=2000.0).text(i18n::tr("Clip end pad ms")));
                     if buttons(ui, "Strip", enter) {
                         action = Some((
                             "edit.strip_silence".into(),
@@ -553,14 +555,14 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
                 }
                 Dialog::Group { id, name, edit, mix, members } => {
                     ui.horizontal(|ui| {
-                        ui.label("Name");
+                        ui.label(i18n::tr("Name"));
                         ui.text_edit_singleline(name);
                     });
                     ui.horizontal(|ui| {
-                        crate::widgets::checkbox(ui, edit, "Edit group");
-                        crate::widgets::checkbox(ui, mix, "Mix group");
+                        crate::widgets::checkbox(ui, edit, i18n::tr("Edit group"));
+                        crate::widgets::checkbox(ui, mix, i18n::tr("Mix group"));
                     });
-                    ui.label("Tracks");
+                    ui.label(i18n::tr("Tracks"));
                     egui::ScrollArea::vertical().max_height(180.0).show(ui, |ui| {
                         for (_, n, on) in members.iter_mut() {
                             crate::widgets::checkbox(ui, on, n.as_str());
@@ -581,12 +583,12 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
                     }
                 }
                 Dialog::Session { frame_rate, bit_depth } => {
-                    egui::ComboBox::from_label("Timecode Rate").selected_text(frame_rate.as_str()).show_ui(ui, |ui| {
+                    egui::ComboBox::from_label(i18n::tr("Timecode Rate")).selected_text(frame_rate.as_str()).show_ui(ui, |ui| {
                         for r in soundcraft_time::FrameRate::ALL {
                             ui.selectable_value(frame_rate, r.label().to_string(), r.label());
                         }
                     });
-                    egui::ComboBox::from_label("Bit Depth").selected_text(bit_depth.as_str()).show_ui(ui, |ui| {
+                    egui::ComboBox::from_label(i18n::tr("Bit Depth")).selected_text(bit_depth.as_str()).show_ui(ui, |ui| {
                         for b in ["16", "24", "32f"] {
                             ui.selectable_value(bit_depth, b.to_string(), b);
                         }
@@ -597,17 +599,17 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
                 }
                 Dialog::ScoreSetup { title, composer, bars_per_system, show_track_names } => {
                     egui::Grid::new("score_setup").num_columns(2).spacing(vec2(10.0, 8.0)).show(ui, |ui| {
-                        ui.label("Title");
+                        ui.label(i18n::tr("Title"));
                         ui.text_edit_singleline(title);
                         ui.end_row();
-                        ui.label("Composer");
+                        ui.label(i18n::tr("Composer"));
                         ui.text_edit_singleline(composer);
                         ui.end_row();
-                        ui.label("Bars per system");
+                        ui.label(i18n::tr("Bars per system"));
                         ui.add(egui::DragValue::new(bars_per_system).range(1..=16));
                         ui.end_row();
                     });
-                    crate::widgets::checkbox(ui, show_track_names, "Show track names");
+                    crate::widgets::checkbox(ui, show_track_names, i18n::tr("Show track names"));
                     if buttons(ui, "OK", enter) {
                         action = Some((
                             "file.score_setup".into(),
@@ -620,19 +622,19 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
                     let revert = then.0 == "session.revert";
                     if revert || cfg!(target_arch = "wasm32") {
                         let (question, ok) = if revert {
-                            (format!("Revert “{name}” to its last saved version?"), "Revert")
+                            (i18n::trf("Revert “{}” to its last saved version?", &[name]), "Revert")
                         } else {
-                            (format!("Close “{name}” without saving?"), "Don't Save")
+                            (i18n::trf("Close “{}” without saving?", &[name]), "Don't Save")
                         };
-                        ui.label(format!("{question} Your changes will be lost."));
+                        ui.label(i18n::trf("{} Your changes will be lost.", &[&question]));
                         if buttons(ui, ok, false) {
                             action = Some(then.clone());
                         }
                     } else {
-                        ui.label(format!("Save changes to “{name}” before closing?"));
+                        ui.label(i18n::trf("Save changes to “{}” before closing?", &[name]));
                         ui.separator();
                         ui.horizontal(|ui| {
-                            if ui.button("Don't Save").clicked() {
+                            if ui.button(i18n::tr("Don't Save")).clicked() {
                                 action = Some(then.clone());
                             }
                             if buttons(ui, "Save", enter) {
@@ -668,7 +670,7 @@ pub fn show(app: &mut SoundApp, ctx: &egui::Context) {
         keep = false;
         match run_then(app, &cmd, params) {
             Ok(v) if cmd == "file.export_clips" => {
-                app.ui.status = format!("Exported {} clip(s) to {}", v["written"], v["dir"].as_str().unwrap_or_default());
+                app.ui.status = i18n::trf("Exported {} clip(s) to {}", &[&v["written"].to_string(), v["dir"].as_str().unwrap_or_default()]);
             }
             Ok(_) => {}
             Err(e) => app.ui.status = e,
@@ -705,10 +707,10 @@ fn buttons_enabled(ui: &mut egui::Ui, ok: &str, enter: bool, ready: bool) -> boo
     let mut pressed = enter && ready;
     ui.separator();
     ui.horizontal(|ui| {
-        if ui.button("Cancel").clicked() {
+        if ui.button(i18n::tr("Cancel")).clicked() {
             ui.ctx().memory_mut(|m| m.data.insert_temp(egui::Id::new("dlg_cancel"), true));
         }
-        let b = egui::Button::new(egui::RichText::new(ok).strong()).fill(Tokens::current().accent);
+        let b = egui::Button::new(egui::RichText::new(i18n::tr(ok)).strong()).fill(Tokens::current().accent);
         if ui.add_enabled(ready, b).clicked() {
             pressed = true;
         }
@@ -736,49 +738,52 @@ fn audiosuite_window(app: &mut SoundApp, ctx: &egui::Context) {
     let Some(process) = app.ui.audiosuite.clone() else { return };
     let mut open = true;
     let title = soundcraft_dsp::plugin_info(&process).map_or_else(|| process.replace('_', " "), |p| p.name.to_string());
-    egui::Window::new(format!("AudioSuite · {title}")).open(&mut open).default_width(360.0).show(ctx, |ui| {
-        let key = egui::Id::new(("as_params", process.clone()));
-        let mut params: std::collections::BTreeMap<String, f32> = ui.ctx().memory(|m| m.data.get_temp(key)).unwrap_or_default();
-        if let Some(info) = soundcraft_dsp::plugin_info(&process) {
-            for p in info.params {
-                let v = params.entry(p.id.to_string()).or_insert(p.default);
-                ui.add(egui::Slider::new(v, p.min..=p.max).text(p.name));
+    egui::Window::new(i18n::trf("AudioSuite · {}", &[&title])).id(egui::Id::new(("audiosuite", &title))).open(&mut open).default_width(360.0).show(
+        ctx,
+        |ui| {
+            let key = egui::Id::new(("as_params", process.clone()));
+            let mut params: std::collections::BTreeMap<String, f32> = ui.ctx().memory(|m| m.data.get_temp(key)).unwrap_or_default();
+            if let Some(info) = soundcraft_dsp::plugin_info(&process) {
+                for p in info.params {
+                    let v = params.entry(p.id.to_string()).or_insert(p.default);
+                    ui.add(egui::Slider::new(v, p.min..=p.max).text(p.name));
+                }
+            } else {
+                match process.as_str() {
+                    "normalize" => {
+                        let v = params.entry("target_db".into()).or_insert(-0.1);
+                        ui.add(egui::Slider::new(v, -24.0..=0.0).text(i18n::tr("Peak dB")));
+                    }
+                    "time_stretch" => {
+                        let v = params.entry("ratio".into()).or_insert(1.0);
+                        ui.add(egui::Slider::new(v, 0.25..=4.0).text(i18n::tr("Length ratio")));
+                    }
+                    "pitch_shift" => {
+                        let v = params.entry("semitones".into()).or_insert(0.0);
+                        ui.add(egui::Slider::new(v, -24.0..=24.0).text(i18n::tr("Semitones")));
+                    }
+                    "varispeed" => {
+                        let v = params.entry("speed".into()).or_insert(1.0);
+                        ui.add(egui::Slider::new(v, 0.25..=4.0).text(i18n::tr("Speed")));
+                    }
+                    _ => {
+                        ui.label(i18n::tr("No parameters."));
+                    }
+                }
             }
-        } else {
-            match process.as_str() {
-                "normalize" => {
-                    let v = params.entry("target_db".into()).or_insert(-0.1);
-                    ui.add(egui::Slider::new(v, -24.0..=0.0).text("Peak dB"));
-                }
-                "time_stretch" => {
-                    let v = params.entry("ratio".into()).or_insert(1.0);
-                    ui.add(egui::Slider::new(v, 0.25..=4.0).text("Length ratio"));
-                }
-                "pitch_shift" => {
-                    let v = params.entry("semitones".into()).or_insert(0.0);
-                    ui.add(egui::Slider::new(v, -24.0..=24.0).text("Semitones"));
-                }
-                "varispeed" => {
-                    let v = params.entry("speed".into()).or_insert(1.0);
-                    ui.add(egui::Slider::new(v, 0.25..=4.0).text("Speed"));
-                }
-                _ => {
-                    ui.label("No parameters.");
-                }
+            ui.ctx().memory_mut(|m| m.data.insert_temp(key, params.clone()));
+            let hint = if soundcraft_dsp::is_generator(&process) {
+                i18n::tr("Fills the selection on the selected tracks with a new clip.")
+            } else {
+                i18n::tr("Processes the selected clips and replaces them with rendered audio.")
+            };
+            ui.label(egui::RichText::new(hint).small());
+            if ui.button(egui::RichText::new(i18n::tr("Render")).strong()).clicked() {
+                let p: serde_json::Map<String, Value> = params.iter().map(|(k, v)| (k.clone(), json!(v))).collect();
+                let _ = app.run("audiosuite.process", json!({"process": process, "params": p}));
             }
-        }
-        ui.ctx().memory_mut(|m| m.data.insert_temp(key, params.clone()));
-        let hint = if soundcraft_dsp::is_generator(&process) {
-            "Fills the selection on the selected tracks with a new clip."
-        } else {
-            "Processes the selected clips and replaces them with rendered audio."
-        };
-        ui.label(egui::RichText::new(hint).small());
-        if ui.button(egui::RichText::new("Render").strong()).clicked() {
-            let p: serde_json::Map<String, Value> = params.iter().map(|(k, v)| (k.clone(), json!(v))).collect();
-            let _ = app.run("audiosuite.process", json!({"process": process, "params": p}));
-        }
-    });
+        },
+    );
     if !open {
         app.ui.audiosuite = None;
     }
